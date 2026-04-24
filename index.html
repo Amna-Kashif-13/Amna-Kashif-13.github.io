@@ -100,10 +100,15 @@ header{
 
 /* ===== HERO ===== */
 .hero {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start;   /* top align */
     justify-content: flex-start;
-    padding: 140px 100px 0 100px;
+    text-align: left;
+
+    padding: 90px 100px 0 100px;  /* 👈 earlier se kam top padding */
 }
 
 .hero h1 {

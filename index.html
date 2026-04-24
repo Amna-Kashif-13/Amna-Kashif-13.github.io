@@ -2,198 +2,198 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Galaxy Background</title>
+<title>Amna Kashif Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        overflow: hidden;
-        background: #071a2f; /* deep navy */
-    }
+body {
+    margin: 0;
+    background: #071a2f;
+    color: white;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
 
-    /* STARS */
-    .stars {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: 0;
-    }
+/* ===== GALAXY BACKGROUND ===== */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 
-    .stars span {
-        position: absolute;
-        width: 2px;
-        height: 2px;
-        background: white;
-        border-radius: 50%;
-        opacity: 0;
-        animation: blink 4s infinite ease-in-out;
-    }
+.stars span {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: blink 4s infinite ease-in-out;
+}
 
-    @keyframes blink {
-        0%, 100% { opacity: 0; transform: scale(0.5); }
-        50% { opacity: 1; transform: scale(1.2); }
-    }
+@keyframes blink {
+    0%,100% {opacity:0; transform:scale(0.5);}
+    50% {opacity:1; transform:scale(1.2);}
+}
 
-    /* GALAXY NEBULA GLOW */
-    .nebula {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        background: radial-gradient(circle,
-            rgba(29,185,84,0.18),
-            rgba(0,255,200,0.08),
-            transparent 70%
-        );
-        filter: blur(60px);
-        border-radius: 50%;
-        animation: floatNebula 12s ease-in-out infinite alternate;
-        opacity: 0.7;
-    }
+.nebula {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+    z-index: 0;
+    background: radial-gradient(circle, rgba(29,185,84,0.18), transparent);
+    animation: float 12s infinite alternate;
+}
 
-    .nebula:nth-child(1) {
-        top: 10%;
-        left: 15%;
-    }
+.nebula:nth-child(1){
+    top:10%;
+    left:15%;
+}
 
-    .nebula:nth-child(2) {
-        bottom: 10%;
-        right: 10%;
-        background: radial-gradient(circle,
-            rgba(120, 100, 255, 0.15),
-            rgba(29,185,84,0.05),
-            transparent 70%
-        );
-        animation-duration: 15s;
-    }
+.nebula:nth-child(2){
+    bottom:10%;
+    right:10%;
+    background: radial-gradient(circle, rgba(120,100,255,0.15), transparent);
+    animation-duration:15s;
+}
 
-    @keyframes floatNebula {
-        0% {
-            transform: translateY(0px) scale(1);
-        }
-        100% {
-            transform: translateY(-40px) scale(1.1);
-        }
-    }
+@keyframes float {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(-40px);}
+}
 
+/* ===== HEADER NAV ===== */
+header{
+    position:relative;
+    z-index:50;
+    display:flex;
+    justify-content:space-between;
+    padding:20px 30px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:white;
+}
+
+.nav-btn{
+    color:white;
+    text-decoration:none;
+    padding:8px 14px;
+    border:1px solid rgba(79,209,197,0.6);
+    border-radius:20px;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.nav-btn:hover{
+    box-shadow:0 0 12px rgba(79,209,197,0.6);
+    transform:translateY(-2px);
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 0 40px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    font-weight: 800;
+}
+
+.hero h2 {
+    color: #1db954;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ddd;
+    max-width: 600px;
+}
+
+.btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 28px;
+    background: #1db954;
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: white;
+}
 </style>
 </head>
 
 <body>
 
-<!-- GALAXY NEBULA -->
+<!-- BACKGROUND -->
 <div class="nebula"></div>
 <div class="nebula"></div>
-
-<!-- STARS -->
 <div class="stars" id="stars"></div>
 
 <script>
-    const container = document.getElementById("stars");
+const stars = document.getElementById("stars");
 
-    for (let i = 0; i < 120; i++) {
-        let star = document.createElement("span");
-
-        star.style.top = Math.random() * 100 + "vh";
-        star.style.left = Math.random() * 100 + "vw";
-
-        star.style.animationDuration = (2 + Math.random() * 5) + "s";
-        star.style.animationDelay = Math.random() * 5 + "s";
-
-        container.appendChild(star);
-    }
+for(let i=0;i<120;i++){
+    let s=document.createElement("span");
+    s.style.top=Math.random()*100+"vh";
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDuration=(2+Math.random()*5)+"s";
+    stars.appendChild(s);
+}
 </script>
 
-<header style="width:100%; padding:20px 30px; display:flex; justify-content:space-between; align-items:center; background:#071a2f; border-bottom:1px solid rgba(255,255,255,0.06); box-sizing:border-box;">
+<!-- HEADER -->
+<header>
+    <div class="logo">AK<span style="color:#1db954;">.</span></div>
 
-    <!-- LEFT LOGO -->
-    <div style="font-size:24px; font-weight:bold; color:white; letter-spacing:2px;">
-        AK<span style="color:#4fd1c5;">.</span>
-    </div>
-
-    <!-- RIGHT NAV -->
-    <nav style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end; max-width:65%;">
-
-        <a href="#about" class="nav-btn">About Me</a>
-        <a href="#skills" class="nav-btn">Skills</a>
-         <a href="#courses" class="nav-btn">Courses</a>
-        <a href="#projects" class="nav-btn">Projects</a>
-        <a href="#experience" class="nav-btn">Experience</a>
-        <a href="#contact" class="nav-btn">Contact Me</a>
-
+    <nav style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="nav-btn" href="#about">About</a>
+        <a class="nav-btn" href="#skills">Skills</a>
+        <a class="nav-btn" href="#projects">Projects</a>
+        <a class="nav-btn" href="#experience">Experience</a>
+        <a class="nav-btn" href="#contact">Contact</a>
     </nav>
-
 </header>
 
-<style>
-.nav-btn{
-    font-size:15px;
-    color:white;
-    text-decoration:none;
-    padding:8px 16px;
-    border:1px solid rgba(79,209,197,0.6);
-    border-radius:22px;
-    transition:0.3s ease;
-    position:relative;
-    overflow:hidden;
-    white-space:nowrap;
-}
+<!-- HERO -->
+<section class="hero">
 
-/* HOVER EFFECT */
-.nav-btn:hover{
-    border-color:#4fd1c5;
-    box-shadow:0 0 12px rgba(79,209,197,0.6),
-               0 0 25px rgba(79,209,197,0.3);
-    transform:translateY(-2px);
-}
+    <div>
 
-/* LIGHT SWEEP EFFECT */
-.nav-btn::after{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
-    width:100%;
-    height:100%;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition:0.5s;
-}
+        <h2>Hello, I'm</h2>
 
-.nav-btn:hover::after{
-    left:100%;
-}
-</style>
+        <h1>Amna Kashif</h1>
 
-<section class="min-h-screen flex items-center justify-center pt-20 px-6 bg-[#0a0a0a]">
-
-    <div id="header" class="flex flex-col items-start text-left max-w-3xl">
-
-        <!-- NAME -->
-        <h2 class="text-[#1db954] font-medium tracking-widest uppercase mb-4 text-lg">
-            Hello, I'm
-        </h2>
-
-        <h1 class="text-white text-6xl md:text-8xl font-bold mb-6">
-            Amna Kashif
-        </h1>
-
-        <!-- ROLE -->
-        <p class="text-white text-xl md:text-3xl mb-8 leading-relaxed">
-            Amazon Virtual Assistant
-            <br>
-            <span class="text-gray-300 text-lg md:text-2xl">
-                Helping Amazon sellers optimize product listings, manage stores, and boost sales with professional virtual assistance.
-            </span>
+        <p>
+            Amazon Virtual Assistant <br>
+            Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
         </p>
 
-        <!-- HIRE ME BUTTON ONLY -->
-        <a href="#contact"
-           class="px-10 py-4 bg-[#1db954] text-black font-bold rounded-full hover:bg-white hover:text-black transition-all text-lg">
-            Hire Me
-        </a>
+        <a href="#contact" class="btn">Hire Me</a>
 
     </div>
 
 </section>
+
+</body>
+</html>

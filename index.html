@@ -166,41 +166,52 @@
 }
 </style>
 
-    <section class="min-h-screen flex items-center justify-center px-6 relative bg-[#0a0a0a] overflow-hidden">
+   <section class="min-h-screen flex items-center justify-between px-10 md:px-20 bg-[#0a0a0a] relative overflow-hidden">
 
-    <!-- subtle background dots -->
-    <div class="absolute inset-0 opacity-30">
-        <div class="w-full h-full bg-[radial-gradient(circle,_#1db954_1px,_transparent_1px)] [background-size:40px_40px]"></div>
+    <!-- BACKGROUND DOTS -->
+    <div class="absolute inset-0 opacity-20">
+        <div class="w-full h-full bg-[radial-gradient(#1db954_1px,transparent_1px)] [background-size:35px_35px]"></div>
     </div>
 
-    <!-- glow effects -->
-    <div class="absolute top-[-10%] left-[-10%] w-[300px] h-[300px] bg-green-500/10 blur-[120px] rounded-full"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-[300px] h-[300px] bg-green-400/10 blur-[120px] rounded-full"></div>
-
-    <!-- HERO CONTENT -->
-    <div class="text-left max-w-3xl z-10">
+    <!-- LEFT CONTENT -->
+    <div class="z-10 max-w-xl">
 
         <h2 class="text-[#1db954] tracking-widest uppercase text-sm mb-4">
-            Hello, I'm
+            HELLO, I'M
         </h2>
 
-        <h1 class="text-white text-5xl md:text-7xl font-bold mb-4">
+        <h1 class="text-white text-5xl md:text-7xl font-bold mb-4 leading-tight">
             Amna Kashif
         </h1>
 
-        <h3 class="text-gray-300 text-xl md:text-2xl mb-4">
+        <h3 class="text-gray-300 text-xl md:text-2xl mb-3">
             Amazon Virtual Assistant
         </h3>
 
-        <p class="text-gray-400 text-base md:text-lg mb-8 leading-relaxed max-w-xl">
-            Helping businesses grow on Amazon by managing listings, optimizing product visibility, and ensuring smooth virtual operations for better sales performance.
+        <p class="text-white text-lg md:text-xl mb-8 leading-relaxed">
+            Helping brands grow on Amazon through product listing optimization, store management, and virtual assistance services.
         </p>
 
-        <!-- BUTTON -->
         <a href="#contact"
-           class="inline-block px-8 py-3 bg-[#1db954] text-black font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300 shadow-lg hover:shadow-green-500/40">
+           class="inline-block px-8 py-3 bg-[#1db954] text-black font-semibold rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-green-500/40">
             Hire Me
         </a>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="z-10 flex justify-center items-center">
+
+        <div class="relative">
+
+            <!-- glowing ring -->
+            <div class="absolute inset-0 rounded-full bg-[#1db954]/20 blur-3xl scale-110"></div>
+
+            <!-- image circle -->
+            <img src="your-image.png"
+                 class="w-[280px] h-[280px] md:w-[380px] md:h-[380px] rounded-full object-cover border-4 border-[#1db954] shadow-2xl relative z-10" />
+
+        </div>
 
     </div>
 

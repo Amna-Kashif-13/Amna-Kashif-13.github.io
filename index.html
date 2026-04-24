@@ -7,6 +7,8 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
+
+/* ===== BASE ===== */
 body {
     margin: 0;
     background: #071a2f;
@@ -14,14 +16,13 @@ body {
     overflow-x: hidden;
     font-family: sans-serif;
 }
+
+/* ===== NAME ANIMATION ===== */
 .animated-name {
-    font-size: 80px;
+    font-size: 78px;
     font-weight: 700;
     color: white;
-    text-align: left;
     margin-bottom: 20px;
-
-    /* ONLY WHITE + SOFT BLUE GLOW */
     animation: softGlow 2.5s ease-in-out infinite alternate;
 }
 
@@ -36,17 +37,6 @@ body {
     }
 }
 
-/* glow animation */
-@keyframes glowText {
-    from {
-        text-shadow: 0 0 5px #1db954, 0 0 10px #1db954;
-        transform: translateY(0px);
-    }
-    to {
-        text-shadow: 0 0 15px #1db954, 0 0 30px #4fd1c5;
-        transform: translateY(-5px);
-    }
-}
 /* ===== GALAXY BACKGROUND ===== */
 .stars {
     position: fixed;
@@ -78,56 +68,46 @@ body {
     filter: blur(60px);
     opacity: 0.7;
     z-index: 0;
-    background: radial-gradient(circle, rgba(29,185,84,0.18), transparent);
+    background: radial-gradient(circle, rgba(120,140,255,0.15), transparent);
     animation: float 12s infinite alternate;
 }
 
-.nebula:nth-child(1){
-    top:10%;
-    left:15%;
-}
-
-.nebula:nth-child(2){
-    bottom:10%;
-    right:10%;
-    background: radial-gradient(circle, rgba(120,100,255,0.15), transparent);
-    animation-duration:15s;
-}
+.nebula:nth-child(1){ top:10%; left:15%; }
+.nebula:nth-child(2){ bottom:10%; right:10%; }
 
 @keyframes float {
     0% {transform:translateY(0);}
     100% {transform:translateY(-40px);}
 }
 
-/* ===== HEADER NAV ===== */
-header{
-    position:relative;
-    z-index:50;
-    display:flex;
-    justify-content:space-between;
-    padding:20px 30px;
-    border-bottom:1px solid rgba(255,255,255,0.08);
+/* ===== HEADER ===== */
+header {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-.logo{
-    font-size:24px;
-    font-weight:bold;
-    color:white;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.nav-btn{
-    color:white;
-    text-decoration:none;
-    padding:8px 14px;
-    border:1px solid rgba(79,209,197,0.6);
-    border-radius:20px;
-    font-size:14px;
-    transition:0.3s;
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
-.nav-btn:hover{
-    box-shadow:0 0 12px rgba(79,209,197,0.6);
-    transform:translateY(-2px);
+.nav-btn:hover {
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    transform: translateY(-2px);
 }
 
 /* ===== HERO ===== */
@@ -136,76 +116,63 @@ header{
     z-index: 10;
     height: 100vh;
     display: flex;
-    align-items: flex-start;   /* top align */
+    align-items: flex-start;
     justify-content: flex-start;
-    text-align: left;
-
-    padding: 90px 100px 0 100px;  /* 👈 earlier se kam top padding */
-}
-
-.hero h1 {
-    font-size: 5rem;
-    font-weight: 800;
+    padding: 90px 100px 0 100px;
 }
 
 .hero h2 {
-    color: #1db954;
+    color: #aaa;
     letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #ddd;
     max-width: 600px;
+    line-height: 1.6;
 }
 
-.btn {
-    margin-top: 20px;
-    display: inline-block;
-    padding: 12px 28px;
-    background: #1db954;
-    color: black;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-}
-
-.btn:hover {
-    background: white;
-}
-    .hire-btn {
-    font-size: 15px;
+/* ===== HIRE ME BUTTON ===== */
+.hire-btn {
+    font-size: 18px;
     color: white;
-    text-decoration: none;
-    padding: 10px 18px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 22px;
-    transition: 0.3s ease;
+    padding: 14px 34px;
+    margin-top: 25px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: 600;
+    letter-spacing: 1px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    transition: all 0.35s ease;
     position: relative;
     overflow: hidden;
 }
 
 .hire-btn:hover {
-    border-color: rgba(255,255,255,0.6);
-    box-shadow: 0 0 10px rgba(255,255,255,0.2),
-                0 0 20px rgba(150,180,255,0.15);
-    transform: translateY(-2px);
+    transform: translateY(-4px) scale(1.06);
+    border-color: rgba(255,255,255,0.8);
+    box-shadow: 0 0 18px rgba(255,255,255,0.25),
+                0 0 40px rgba(150,180,255,0.25);
 }
 
 .hire-btn::after {
     content: "";
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: -120%;
+    width: 120%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.15), transparent);
-    transition: 0.5s;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: 0.6s;
 }
 
 .hire-btn:hover::after {
-    left: 100%;
+    left: 120%;
 }
+
 </style>
 </head>
 
@@ -230,7 +197,7 @@ for(let i=0;i<120;i++){
 
 <!-- HEADER -->
 <header>
-    <div class="logo">AK<span style="color:#1db954;">.</span></div>
+    <div class="logo">AK<span style="color:white;">.</span></div>
 
     <nav style="display:flex; gap:10px; flex-wrap:wrap;">
         <a class="nav-btn" href="#about">About</a>
@@ -249,19 +216,18 @@ for(let i=0;i<120;i++){
 
         <h2>Hello, I'm</h2>
 
-      <h1 class="animated-name">
-    Amna Kashif
-</h1>
+        <h1 class="animated-name">
+            Amna Kashif
+        </h1>
 
         <p>
             Amazon Virtual Assistant <br>
             Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
         </p>
 
-       <a href="#contact"
-   class="nav-btn hire-btn">
-    Hire Me
-</a>
+        <a href="#contact" class="hire-btn">
+            Hire Me
+        </a>
 
     </div>
 

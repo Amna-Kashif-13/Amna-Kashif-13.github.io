@@ -116,21 +116,18 @@ header {
     z-index: 10;
     height: 100vh;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
     padding: 90px 100px 0 100px;
+    gap: 50px;
 }
 
-.hero h2 {
-    color: #aaa;
-    letter-spacing: 2px;
-}
-
-.hero p {
-    font-size: 1.4rem;
-    color: #ddd;
-    max-width: 600px;
-    line-height: 1.6;
+/* RIGHT IMAGE */
+.hero-img {
+    width: 420px;
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 35px rgba(255,255,255,0.12);
 }
 
 /* ===== HIRE ME BUTTON ===== */
@@ -173,6 +170,32 @@ header {
     left: 120%;
 }
 
+/* ===== ABOUT SECTION ===== */
+#about {
+    position: relative;
+    z-index: 10;
+    padding: 20px 100px 120px 100px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.about-box {
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ABOUT TITLE ANIMATION */
+.about-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    animation: softGlow 2.5s ease-in-out infinite alternate;
+}
+
 </style>
 </head>
 
@@ -211,6 +234,8 @@ for(let i=0;i<120;i++){
 
 <!-- HERO -->
 <section class="hero">
+
+    <!-- LEFT TEXT -->
     <div>
         <h2>Hello, I'm</h2>
 
@@ -227,50 +252,32 @@ for(let i=0;i<120;i++){
             Hire Me
         </a>
     </div>
+
+    <!-- RIGHT IMAGE -->
+    <img class="hero-img" src="/mnt/data/b3d74575-71e6-4aeb-bcfd-863345227633.jpeg">
+
 </section>
 
-<!-- ABOUT SECTION -->
-<section id="about" style="
-    position: relative;
-    z-index: 10;
-    padding: 5px 100px 120px 100px;
-    display: flex;
-    justify-content: flex-start;
-">
+<!-- ABOUT -->
+<section id="about">
 
-<div style="
-    max-width: 800px;
-    padding: 40px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25); /* 👈 SAME AS NAV */
-">
+    <div class="about-box">
 
-    <!-- HEADING WITH ANIMATION -->
-    <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
-        About Me
-    </h2>
+        <h2 class="about-title">About Me</h2>
 
-    <!-- TEXT -->
-    <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
-        I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> 
-        with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. 
-        I specialize in product research, keyword optimization, product listing creation, and account management.
-    </p>
+        <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
+            I am a dedicated and detail-oriented <b>Amazon Virtual Assistant</b> with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. I specialize in product research, keyword optimization, product listing creation, and account management.
+        </p>
 
-    <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
-        With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is 
-        completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, 
-        improves visibility, and enhances overall store performance.
-    </p>
+        <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
+            With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure accuracy and efficiency in every task. My goal is to increase sales, improve visibility, and enhance overall store performance.
+        </p>
 
-    <p style="font-size:18px; color:#dcdcdc; line-height:1.8;">
-        I am committed to delivering reliable, timely, and results-driven services while maintaining clear 
-        communication with my clients.
-    </p>
+        <p style="font-size:18px; color:#dcdcdc; line-height:1.8;">
+            I am committed to delivering reliable, timely, and results-driven services with clear communication.
+        </p>
 
-</div>
+    </div>
 
 </section>
 

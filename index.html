@@ -1,1 +1,269 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <title>Amna Kashif Portfolio</title> <script src="https://cdn.tailwindcss.com"></script> <style> /* ===== BASE ===== */ body { margin: 0; background: #071a2f; color: white; overflow-x: hidden; font-family: sans-serif; } /* ===== NAME ANIMATION ===== */ .animated-name { font-size: 78px; font-weight: 700; color: white; margin-bottom: 20px; animation: softGlow 2.5s ease-in-out infinite alternate; } @keyframes softGlow { from { text-shadow: 0 0 6px rgba(255,255,255,0.2); transform: translateY(0px); } to { text-shadow: 0 0 12px rgba(200,220,255,0.4); transform: translateY(-4px); } } /* ===== GALAXY BACKGROUND ===== */ .stars { position: fixed; width: 100%; height: 100%; z-index: 0; } .stars span { position: absolute; width: 2px; height: 2px; background: white; border-radius: 50%; opacity: 0; animation: blink 4s infinite ease-in-out; } @keyframes blink { 0%,100% {opacity:0; transform:scale(0.5);} 50% {opacity:1; transform:scale(1.2);} } .nebula { position: absolute; width: 500px; height: 500px; border-radius: 50%; filter: blur(60px); opacity: 0.7; z-index: 0; background: radial-gradient(circle, rgba(120,140,255,0.15), transparent); animation: float 12s infinite alternate; } .nebula:nth-child(1){ top:10%; left:15%; } .nebula:nth-child(2){ bottom:10%; right:10%; } @keyframes float { 0% {transform:translateY(0);} 100% {transform:translateY(-40px);} } /* ===== HEADER ===== */ header { position: relative; z-index: 50; display: flex; justify-content: space-between; padding: 20px 30px; border-bottom: 1px solid rgba(255,255,255,0.08); } .logo { font-size: 24px; font-weight: bold; } .nav-btn { color: white; text-decoration: none; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.25); border-radius: 20px; font-size: 14px; transition: 0.3s; } .nav-btn:hover { box-shadow: 0 0 10px rgba(255,255,255,0.2); transform: translateY(-2px); } /* ===== HERO ===== */ .hero { position: relative; z-index: 10; height: 100vh; display: flex; align-items: flex-start; justify-content: flex-start; padding: 90px 100px 0 100px; } .hero h2 { color: #aaa; letter-spacing: 2px; } .hero p { font-size: 1.4rem; color: #ddd; max-width: 600px; line-height: 1.6; } /* ===== HIRE ME BUTTON ===== */ .hire-btn { font-size: 18px; color: white; padding: 14px 34px; margin-top: 25px; border: 2px solid rgba(255,255,255,0.35); border-radius: 30px; display: inline-block; font-weight: 600; letter-spacing: 1px; background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); transition: all 0.35s ease; position: relative; overflow: hidden; } .hire-btn:hover { transform: translateY(-4px) scale(1.06); border-color: rgba(255,255,255,0.8); box-shadow: 0 0 18px rgba(255,255,255,0.25), 0 0 40px rgba(150,180,255,0.25); } .hire-btn::after { content: ""; position: absolute; top: 0; left: -120%; width: 120%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent); transition: 0.6s; } .hire-btn:hover::after { left: 120%; } /* ===== PROFILE IMAGE ===== */ .profile-img { width: 420px; height: auto; border-radius: 20px; mix-blend-mode: lighten; filter: drop-shadow(0 0 25px rgba(120,140,255,0.4)); background: rgba(255,255,255,0.03); padding: 10px; transition: 0.4s ease; } .profile-img:hover { transform: scale(1.05); filter: drop-shadow(0 0 40px rgba(150,180,255,0.6)); } .skill-box { padding: 14px 22px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); font-size: 16px; color: white; transition: 0.3s; white-space: nowrap; } .skill-box:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 0 15px rgba(255,255,255,0.2), 0 0 30px rgba(150,180,255,0.2); } </style> </head> <body> <!-- BACKGROUND --> <div class="nebula"></div> <div class="nebula"></div> <div class="stars" id="stars"></div> <script> const stars = document.getElementById("stars"); for(let i=0;i<120;i++){ let s=document.createElement("span"); s.style.top=Math.random()*100+"vh"; s.style.left=Math.random()*100+"vw"; s.style.animationDuration=(2+Math.random()*5)+"s"; stars.appendChild(s); } </script> <!-- HEADER --> <header> <div class="logo">AK<span style="color:white;">.</span></div> <nav style="display:flex; gap:10px; flex-wrap:wrap;"> <a class="nav-btn" href="#about">About</a> <a class="nav-btn" href="#skills">Skills</a> <a class="nav-btn" href="#courses">Courses</a> <a class="nav-btn" href="#projects">Projects</a> <a class="nav-btn" href="#experience">Experience</a> <a class="nav-btn" href="#contact">Contact</a> </nav> </header> <!-- HERO --> <section class="hero"> <div style="display:flex; align-items:center; justify-content:space-between; width:100%;"> <!-- LEFT TEXT --> <div> <h2>Hello, I'm</h2> <h1 class="animated-name"> Amna Kashif </h1> <p> Amazon Virtual Assistant <br> Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance. </p> <a href="#contact" class="hire-btn"> Hire Me </a> </div> <!-- RIGHT IMAGE --> <div> <img src="my img.jpeg" class="profile-img"> </div> </div> </section> <!-- ABOUT SECTION --> <section id="about" style=" position: relative; z-index: 10; padding: 5px 100px 120px 100px; display: flex; justify-content: flex-start; "> <div style=" max-width: 800px; padding: 40px; border-radius: 20px; background: rgba(255,255,255,0.04); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); "> <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;"> About Me </h2> <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;"> I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. I specialize in product research, keyword optimization, product listing creation, and account management. </p> <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;"> With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance. </p> <p style="font-size:18px; color:#dcdcdc; line-height:1.8;"> I am committed to delivering reliable, timely, and results-driven services while maintaining clear communication with my clients. </p> </div> </section> <!-- SKILLS SECTION --> <section id="skills" style=" position: relative; z-index: 10; padding: 80px 100px; "> <h2 class="animated-name" style="font-size:42px; margin-bottom:40px;"> Skills </h2> <!-- SKILLS ROW --> <div style=" display: flex; gap: 20px; flex-wrap: wrap; /* responsive */ "> <!-- SKILL CARD --> <div class="skill-box">Product Research</div> <div class="skill-box">Keyword Research</div> <div class="skill-box">Product Listing</div> <div class="skill-box">Amazon SEO</div> <div class="skill-box">Account Management</div> <div class="skill-box">PPC Campaigns</div> <div class="skill-box">Competitor Analysis</div> <div class="skill-box">A+ Content</div> </div> </section> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Amna Kashif Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+/* ===== BASE ===== */
+body {
+    margin: 0;
+    background: #071a2f;
+    color: white;
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+/* ===== NAME ANIMATION ===== */
+.animated-name {
+    font-size: 78px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    animation: softGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes softGlow {
+    from {
+        text-shadow: 0 0 6px rgba(255,255,255,0.2);
+        transform: translateY(0px);
+    }
+    to {
+        text-shadow: 0 0 12px rgba(200,220,255,0.4);
+        transform: translateY(-4px);
+    }
+}
+
+/* ===== GALAXY BACKGROUND ===== */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.stars span {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: blink 4s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%,100% {opacity:0; transform:scale(0.5);}
+    50% {opacity:1; transform:scale(1.2);}
+}
+
+.nebula {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.7;
+    z-index: 0;
+    background: radial-gradient(circle, rgba(120,140,255,0.15), transparent);
+    animation: float 12s infinite alternate;
+}
+
+.nebula:nth-child(1){ top:10%; left:15%; }
+.nebula:nth-child(2){ bottom:10%; right:10%; }
+
+@keyframes float {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(-40px);}
+}
+
+/* ===== HEADER ===== */
+header {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-btn {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 90px 100px 0 100px;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    color: #ddd;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* ===== BUTTON ===== */
+.hire-btn {
+    font-size: 18px;
+    color: white;
+    padding: 14px 34px;
+    margin-top: 25px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    display: inline-block;
+    font-weight: 600;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hire-btn:hover {
+    transform: translateY(-4px) scale(1.06);
+    border-color: rgba(255,255,255,0.8);
+    box-shadow: 0 0 18px rgba(255,255,255,0.25);
+}
+
+/* ===== IMAGE ===== */
+.profile-img {
+    width: 420px;
+    border-radius: 20px;
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 25px rgba(120,140,255,0.4));
+    padding: 10px;
+}
+
+/* ===== SKILLS ===== */
+.skill-box {
+    padding: 14px 22px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+/* ===== SECTION BOX STYLE ===== */
+.section-box {
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="nebula"></div>
+<div class="nebula"></div>
+<div class="stars" id="stars"></div>
+
+<script>
+const stars = document.getElementById("stars");
+for(let i=0;i<120;i++){
+    let s=document.createElement("span");
+    s.style.top=Math.random()*100+"vh";
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDuration=(2+Math.random()*5)+"s";
+    stars.appendChild(s);
+}
+</script>
+
+<header>
+    <div class="logo">AK<span>.</span></div>
+    <nav>
+        <a class="nav-btn" href="#about">About</a>
+        <a class="nav-btn" href="#skills">Skills</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+
+<div>
+<h2>Hello, I'm</h2>
+<h1 class="animated-name">Amna Kashif</h1>
+
+<p>
+Amazon Virtual Assistant <br>
+Helping Amazon sellers optimize listings.
+</p>
+
+<a class="hire-btn">Hire Me</a>
+</div>
+
+<img src="my img.jpeg" class="profile-img">
+
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding:80px 100px;">
+<div class="section-box">
+
+<h2 class="animated-name" style="font-size:42px;">About Me</h2>
+
+<p style="margin-top:20px;">
+I am Amazon VA specializing in product research, SEO and listing optimization.
+</p>
+
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="padding:80px 100px;">
+<div class="section-box">
+
+<h2 class="animated-name" style="font-size:42px;">Skills</h2>
+
+<div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:20px;">
+<div class="skill-box">Product Research</div>
+<div class="skill-box">Keyword Research</div>
+<div class="skill-box">Amazon SEO</div>
+<div class="skill-box">Listing Optimization</div>
+<div class="skill-box">PPC</div>
+<div class="skill-box">Account Management</div>
+</div>
+
+</div>
+</section>
+
+</body>
+</html>

@@ -194,22 +194,22 @@ header {
     filter: drop-shadow(0 0 40px rgba(150,180,255,0.6));
 }
 
-    .skill-box {
-    padding: 14px 18px;
-    border-radius: 14px;
+   .skill-box {
+    padding: 14px 22px;
+    border-radius: 25px;
     border: 1px solid rgba(255,255,255,0.25);
-    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
     font-size: 16px;
-    color: #e5e5e5;
-    background: rgba(255,255,255,0.03);
-    transition: 0.3s ease;
+    color: white;
+    transition: 0.3s;
+    white-space: nowrap;
 }
 
 .skill-box:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 0 15px rgba(150,180,255,0.25);
-    border-color: rgba(255,255,255,0.6);
-    color: white;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2),
+                0 0 30px rgba(150,180,255,0.2);
 }
 </style>
 </head>

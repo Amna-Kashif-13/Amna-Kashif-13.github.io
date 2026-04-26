@@ -207,6 +207,31 @@ header {
     box-shadow: 0 0 15px rgba(255,255,255,0.2),
                 0 0 30px rgba(150,180,255,0.2);
 }
+
+    .course-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+    text-align: center;
+}
+
+.course-item {
+    margin: 15px 0;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.3s;
+}
+
+.course-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(150,180,255,0.2);
+}
 </style>
 </head>
 
@@ -371,6 +396,41 @@ for(let i=0;i<120;i++){
 
 </section>
 
+    <!-- COURSES SECTION -->
+<section id="courses" style="
+    position: relative;
+    z-index: 10;
+    padding: 80px 100px;
+    text-align: center;
+">
+
+    <h2 class="animated-name" style="font-size:42px; margin-bottom:40px;">
+        Courses
+    </h2>
+
+    <div class="course-box">
+
+        <div class="course-item">
+            Amazon Digital Mastery Course  
+            <br>
+            <small>From Enablers</small>
+        </div>
+
+        <div class="course-item">
+            Amazon Virtual Assistant Course  
+            <br>
+            <small>From DigiSkills</small>
+        </div>
+
+        <div class="course-item">
+            Freelancing Course  
+            <br>
+            <small>From DigiSkills</small>
+        </div>
+
+    </div>
+
+</section>
 
 </body>
 </html>

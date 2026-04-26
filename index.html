@@ -121,6 +121,11 @@ header {
     padding: 90px 100px 0 100px;
 }
 
+.hero h2 {
+    color: #aaa;
+    letter-spacing: 2px;
+}
+
 .hero p {
     font-size: 1.4rem;
     color: #ddd;
@@ -128,7 +133,7 @@ header {
     line-height: 1.6;
 }
 
-/* ===== BUTTON ===== */
+/* ===== HIRE ME BUTTON ===== */
 .hire-btn {
     font-size: 18px;
     color: white;
@@ -138,6 +143,7 @@ header {
     border-radius: 30px;
     display: inline-block;
     font-weight: 600;
+    letter-spacing: 1px;
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(8px);
     transition: all 0.35s ease;
@@ -148,19 +154,42 @@ header {
 .hire-btn:hover {
     transform: translateY(-4px) scale(1.06);
     border-color: rgba(255,255,255,0.8);
-    box-shadow: 0 0 18px rgba(255,255,255,0.25);
+    box-shadow: 0 0 18px rgba(255,255,255,0.25),
+                0 0 40px rgba(150,180,255,0.25);
 }
 
-/* ===== IMAGE ===== */
+.hire-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 120%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: 0.6s;
+}
+
+.hire-btn:hover::after {
+    left: 120%;
+}
+
+/* ===== PROFILE IMAGE ===== */
 .profile-img {
     width: 420px;
+    height: auto;
     border-radius: 20px;
     mix-blend-mode: lighten;
     filter: drop-shadow(0 0 25px rgba(120,140,255,0.4));
+    background: rgba(255,255,255,0.03);
     padding: 10px;
+    transition: 0.4s ease;
 }
 
-/* ===== SKILLS ===== */
+.profile-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 40px rgba(150,180,255,0.6));
+}
+
 .skill-box {
     padding: 14px 22px;
     border-radius: 25px;
@@ -168,34 +197,29 @@ header {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(8px);
     font-size: 16px;
+    color: white;
+    transition: 0.3s;
     white-space: nowrap;
 }
 
 .skill-box:hover {
     transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 15px rgba(255,255,255,0.2),
+                0 0 30px rgba(150,180,255,0.2);
 }
-
-/* ===== SECTION BOX STYLE ===== */
-.section-box {
-    max-width: 800px;
-    padding: 40px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
-}
-
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
 <div class="nebula"></div>
 <div class="nebula"></div>
 <div class="stars" id="stars"></div>
 
 <script>
 const stars = document.getElementById("stars");
+
 for(let i=0;i<120;i++){
     let s=document.createElement("span");
     s.style.top=Math.random()*100+"vh";
@@ -205,64 +229,112 @@ for(let i=0;i<120;i++){
 }
 </script>
 
+<!-- HEADER -->
 <header>
-    <div class="logo">AK<span>.</span></div>
-    <nav>
+    <div class="logo">AK<span style="color:white;">.</span></div>
+
+    <nav style="display:flex; gap:10px; flex-wrap:wrap;">
         <a class="nav-btn" href="#about">About</a>
         <a class="nav-btn" href="#skills">Skills</a>
+        <a class="nav-btn" href="#courses">Courses</a>
+        <a class="nav-btn" href="#projects">Projects</a>
+        <a class="nav-btn" href="#experience">Experience</a>
+        <a class="nav-btn" href="#contact">Contact</a>
     </nav>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-<div style="display:flex; justify-content:space-between; width:100%; align-items:center;">
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
 
-<div>
-<h2>Hello, I'm</h2>
-<h1 class="animated-name">Amna Kashif</h1>
+        <!-- LEFT TEXT -->
+        <div>
+            <h2>Hello, I'm</h2>
 
-<p>
-Amazon Virtual Assistant <br>
-Helping Amazon sellers optimize listings.
-</p>
+            <h1 class="animated-name">
+                Amna Kashif
+            </h1>
 
-<a class="hire-btn">Hire Me</a>
-</div>
+            <p>
+                Amazon Virtual Assistant <br>
+                Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
+            </p>
 
-<img src="my img.jpeg" class="profile-img">
+            <a href="#contact" class="hire-btn">
+                Hire Me
+            </a>
+        </div>
 
-</div>
+        <!-- RIGHT IMAGE -->
+        <div>
+            <img src="my img.jpeg" class="profile-img">
+        </div>
+
+    </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about" style="padding:80px 100px;">
-<div class="section-box">
+<!-- ABOUT SECTION -->
+<section id="about" style="
+    position: relative;
+    z-index: 10;
+    padding: 5px 100px 120px 100px;
+    display: flex;
+    justify-content: flex-start;
+">
 
-<h2 class="animated-name" style="font-size:42px;">About Me</h2>
+<div style="
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+">
 
-<p style="margin-top:20px;">
-I am Amazon VA specializing in product research, SEO and listing optimization.
-</p>
+    <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
+        About Me
+    </h2>
+
+    <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
+        I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. I specialize in product research, keyword optimization, product listing creation, and account management.
+    </p>
+
+    <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
+        With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.
+    </p>
+
+    <p style="font-size:18px; color:#dcdcdc; line-height:1.8;">
+        I am committed to delivering reliable, timely, and results-driven services while maintaining clear communication with my clients.
+    </p>
 
 </div>
+
 </section>
 
-<!-- SKILLS -->
-<section id="skills" style="padding:80px 100px;">
-<div class="section-box">
+<!-- SKILLS SECTION -->
+<section id="skills" style="
+    position: relative;
+    z-index: 10;
+    padding: 80px 100px;
+">
 
-<h2 class="animated-name" style="font-size:42px;">Skills</h2>
+    <h2 class="animated-name" style="font-size:42px; margin-bottom:40px;">
+        Skills
+    </h2>
 
-<div style="display:flex; flex-wrap:wrap; gap:15px; margin-top:20px;">
-<div class="skill-box">Product Research</div>
-<div class="skill-box">Keyword Research</div>
-<div class="skill-box">Amazon SEO</div>
-<div class="skill-box">Listing Optimization</div>
-<div class="skill-box">PPC</div>
-<div class="skill-box">Account Management</div>
-</div>
+    <div style="display:flex; gap:20px; flex-wrap:wrap;">
 
-</div>
+        <div class="skill-box">Product Research</div>
+        <div class="skill-box">Keyword Research</div>
+        <div class="skill-box">Product Listing</div>
+        <div class="skill-box">Amazon SEO</div>
+        <div class="skill-box">Account Management</div>
+        <div class="skill-box">PPC Campaigns</div>
+        <div class="skill-box">Competitor Analysis</div>
+        <div class="skill-box">A+ Content</div>
+
+    </div>
+
 </section>
 
 </body>

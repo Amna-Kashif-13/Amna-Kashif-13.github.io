@@ -173,6 +173,27 @@ header {
     left: 120%;
 }
 
+/* ===== PROFILE IMAGE ===== */
+.profile-img {
+    width: 420px;
+    height: auto;
+    border-radius: 20px;
+
+    mix-blend-mode: lighten;
+
+    filter: drop-shadow(0 0 25px rgba(120,140,255,0.4));
+
+    background: rgba(255,255,255,0.03);
+    padding: 10px;
+
+    transition: 0.4s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 40px rgba(150,180,255,0.6));
+}
+
 </style>
 </head>
 
@@ -211,36 +232,39 @@ for(let i=0;i<120;i++){
 
 <!-- HERO -->
 <section class="hero">
-        <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
-          <div>
-        <h2>Hello, I'm</h2>
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
 
-        <h1 class="animated-name">
-            Amna Kashif
-        </h1>
+        <!-- LEFT TEXT -->
+        <div>
+            <h2>Hello, I'm</h2>
 
-        <p>
-            Amazon Virtual Assistant <br>
-            Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
-        </p>
+            <h1 class="animated-name">
+                Amna Kashif
+            </h1>
 
-        <a href="#contact" class="hire-btn">
-            Hire Me
-        </a>
-  </div>
-<div>
-        <img src="my img.jpeg" style="width:300px; height:auto;">
+            <p>
+                Amazon Virtual Assistant <br>
+                Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
+            </p>
+
+            <a href="#contact" class="hire-btn">
+                Hire Me
+            </a>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+        <div>
+            <img src="myimg.jpeg" class="profile-img">
+        </div>
+
     </div>
-
-</div>
-    
 </section>
 
 <!-- ABOUT SECTION -->
 <section id="about" style="
     position: relative;
     z-index: 10;
-    padding: 5px 100px 120px 100px; /* 👈 TOP SPACE KAM KIYA */
+    padding: 5px 100px 120px 100px;
     display: flex;
     justify-content: flex-start;
 ">
@@ -251,15 +275,13 @@ for(let i=0;i<120;i++){
     border-radius: 20px;
     background: rgba(255,255,255,0.04);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25); /* 👈 SAME AS NAV */
+    border: 1px solid rgba(255,255,255,0.25);
 ">
 
-    <!-- HEADING WITH ANIMATION -->
     <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
         About Me
     </h2>
 
-    <!-- TEXT -->
     <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
         I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> 
         with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. 
@@ -276,7 +298,6 @@ for(let i=0;i<120;i++){
         I am committed to delivering reliable, timely, and results-driven services while maintaining clear 
         communication with my clients.
     </p>
-
 
 </div>
 

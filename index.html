@@ -229,7 +229,7 @@ for(let i=0;i<120;i++){
         </a>
   </div>
 <div>
-        <img src="my img.jpeg" style="width:300px; height:auto;">
+        <img src="myimage.png" class="profile-img">
     </div>
 
 </div>
@@ -276,6 +276,24 @@ for(let i=0;i<120;i++){
         I am committed to delivering reliable, timely, and results-driven services while maintaining clear 
         communication with my clients.
     </p>
+
+    .profile-img {
+    width: 380px;        /* 👈 size bada */
+    height: auto;
+    border-radius: 20px;
+
+    /* 👇 background blend (green kam nazar aayega) */
+    mix-blend-mode: lighten;
+
+    /* 👇 soft glow effect (blue theme match) */
+    filter: drop-shadow(0 0 20px rgba(150,180,255,0.3));
+
+    transition: 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+}
 
 </div>
 

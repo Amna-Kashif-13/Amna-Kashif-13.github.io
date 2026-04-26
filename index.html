@@ -208,30 +208,60 @@ header {
                 0 0 30px rgba(150,180,255,0.2);
 }
 
-    .course-box {
+   <!-- COURSES SECTION -->
+<section id="courses" style="
+    position: relative;
+    z-index: 10;
+    padding: 40px 100px 60px 100px;
+    display: flex;
+    justify-content: center;
+">
+
+<div style="
     max-width: 900px;
-    margin: auto;
+    width: 100%;
     padding: 40px;
     border-radius: 20px;
     background: rgba(255,255,255,0.04);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.25);
-    text-align: center;
-}
+">
 
-.course-item {
-    margin: 15px 0;
-    padding: 15px 20px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: 0.3s;
-}
+    <!-- HEADING -->
+    <h2 class="animated-name" style="
+        font-size: 42px;
+        margin-bottom: 30px;
+        text-align: center;
+    ">
+        Courses
+    </h2>
 
-.course-item:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(150,180,255,0.2);
-}
+    <!-- COURSES LIST -->
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        align-items: center;
+        text-align: center;
+    ">
+
+        <div class="skill-box" style="font-size:17px;">
+            Amazon Digital Mastery Course (Enablers)
+        </div>
+
+        <div class="skill-box" style="font-size:17px;">
+            Amazon Virtual Assistant Course (Digiskills)
+        </div>
+
+        <div class="skill-box" style="font-size:17px;">
+            Freelancing Course (Digiskills)
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 </style>
 </head>
 

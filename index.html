@@ -315,14 +315,31 @@ for(let i=0;i<120;i++){
 <section id="skills" style="
     position: relative;
     z-index: 10;
-    padding: 80px 100px;
+    padding: 40px 100px 120px 100px; /* 👈 TOP SPACE KAM = UPPER SHIFT */
+    display: flex;
+    justify-content: flex-start;
 ">
 
-    <h2 class="animated-name" style="font-size:42px; margin-bottom:40px;">
+<div style="
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+">
+
+    <!-- HEADING -->
+    <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
         Skills
     </h2>
 
-    <div style="display:flex; gap:20px; flex-wrap:wrap;">
+    <!-- SKILLS -->
+    <div style="
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    ">
 
         <div class="skill-box">Product Research</div>
         <div class="skill-box">Keyword Research</div>
@@ -335,7 +352,10 @@ for(let i=0;i<120;i++){
 
     </div>
 
+</div>
+
 </section>
+
 
 </body>
 </html>

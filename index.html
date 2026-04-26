@@ -277,34 +277,44 @@ for(let i=0;i<120;i++){
 <section id="about" style="
     position: relative;
     z-index: 10;
-    padding: 5px 100px 120px 100px;
+    padding: 80px 100px; 
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;   /* 👈 CENTER */
+    align-items: center;
 ">
 
 <div style="
-    max-width: 800px;
-    padding: 40px;
+    width: 100%;
+    max-width: 1000px;   /* 👈 thora wide (horizontal feel) */
+    padding: 40px 60px;
     border-radius: 20px;
     background: rgba(255,255,255,0.04);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.25);
+    text-align: center;   /* 👈 center text */
 ">
 
+    <!-- HEADING -->
     <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
         About Me
     </h2>
 
+    <!-- TEXT -->
     <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
-        I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. I specialize in product research, keyword optimization, product listing creation, and account management.
+        I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> 
+        with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. 
+        I specialize in product research, keyword optimization, product listing creation, and account management.
     </p>
 
     <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
-        With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.
+        With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is 
+        completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, 
+        improves visibility, and enhances overall store performance.
     </p>
 
     <p style="font-size:18px; color:#dcdcdc; line-height:1.8;">
-        I am committed to delivering reliable, timely, and results-driven services while maintaining clear communication with my clients.
+        I am committed to delivering reliable, timely, and results-driven services while maintaining clear 
+        communication with my clients.
     </p>
 
 </div>
@@ -315,34 +325,39 @@ for(let i=0;i<120;i++){
 <section id="skills" style="
     position: relative;
     z-index: 10;
-    padding: 40px 100px 120px 100px; /* 👈 TOP SPACE KAM = UPPER SHIFT */
+    padding: 60px 100px 120px 100px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;   /* 👈 CENTER */
+    align-items: center;
 ">
 
 <div style="
-    max-width: 800px;
-    padding: 40px;
+    width: 100%;
+    max-width: 1000px;   /* 👈 horizontal feel */
+    padding: 40px 60px;
     border-radius: 20px;
     background: rgba(255,255,255,0.04);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.25);
+    text-align: center;
 ">
 
     <!-- HEADING -->
-    <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
+    <h2 class="animated-name" style="font-size:42px; margin-bottom:30px;">
         Skills
     </h2>
 
-    <!-- SKILLS -->
+    <!-- SKILLS LIST -->
     <div style="
         display: flex;
-        gap: 15px;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     ">
 
         <div class="skill-box">Product Research</div>
         <div class="skill-box">Keyword Research</div>
+        <div class="skill-box">Listing Optimization</div> <!-- 👈 ADDED -->
         <div class="skill-box">Product Listing</div>
         <div class="skill-box">Amazon SEO</div>
         <div class="skill-box">Account Management</div>

@@ -194,6 +194,23 @@ header {
     filter: drop-shadow(0 0 40px rgba(150,180,255,0.6));
 }
 
+    .skill-box {
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.25);
+    text-align: center;
+    font-size: 16px;
+    color: #e5e5e5;
+    background: rgba(255,255,255,0.03);
+    transition: 0.3s ease;
+}
+
+.skill-box:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 0 15px rgba(150,180,255,0.25);
+    border-color: rgba(255,255,255,0.6);
+    color: white;
+}
 </style>
 </head>
 
@@ -298,6 +315,56 @@ for(let i=0;i<120;i++){
         I am committed to delivering reliable, timely, and results-driven services while maintaining clear 
         communication with my clients.
     </p>
+
+</div>
+
+</section>
+
+    <!-- SKILLS SECTION -->
+<section id="skills" style="
+    position: relative;
+    z-index: 10;
+    padding: 20px 100px 120px 100px;
+    display: flex;
+    justify-content: flex-start;
+">
+
+<div style="
+    max-width: 900px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
+">
+
+    <!-- HEADING -->
+    <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
+        Skills
+    </h2>
+
+    <!-- SKILLS GRID -->
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    ">
+
+        <!-- SKILL ITEM -->
+        <div class="skill-box">Product Research</div>
+        <div class="skill-box">Keyword Research</div>
+        <div class="skill-box">Product Listing Optimization</div>
+        <div class="skill-box">Amazon SEO</div>
+        <div class="skill-box">Competitor Analysis</div>
+        <div class="skill-box">Store Management</div>
+        <div class="skill-box">Order Processing</div>
+        <div class="skill-box">Inventory Management</div>
+        <div class="skill-box">Customer Support</div>
+        <div class="skill-box">A+ Content Creation</div>
+        <div class="skill-box">Amazon PPC </div>
+        <div class="skill-box">Account Health Management</div>
+
+    </div>
 
 </div>
 

@@ -2,10 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<!-- MOBILE FIX -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Amna Kashif Portfolio</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -19,6 +15,39 @@ body {
     color: white;
     overflow-x: hidden;
     font-family: sans-serif;
+}
+
+/* ===== RESPONSIVE FIX ===== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px !important;
+        height: auto !important;
+        text-align: center;
+    }
+
+    .hero img {
+        width: 250px !important;
+        margin-top: 20px;
+    }
+
+    .animated-name {
+        font-size: 40px !important;
+    }
+
+    section {
+        padding: 40px 20px !important;
+    }
+
+    #about div,
+    #skills div,
+    #courses div {
+        padding: 20px !important;
+    }
+
+    p {
+        font-size: 15px !important;
+    }
 }
 
 /* ===== NAME ANIMATION ===== */
@@ -41,7 +70,7 @@ body {
     }
 }
 
-/* ===== BACKGROUND ===== */
+/* ===== GALAXY BACKGROUND ===== */
 .stars {
     position: fixed;
     width: 100%;
@@ -60,8 +89,8 @@ body {
 }
 
 @keyframes blink {
-    0%,100% {opacity:0;}
-    50% {opacity:1;}
+    0%,100% {opacity:0; transform:scale(0.5);}
+    50% {opacity:1; transform:scale(1.2);}
 }
 
 .nebula {
@@ -71,53 +100,79 @@ body {
     border-radius: 50%;
     filter: blur(60px);
     opacity: 0.7;
+    z-index: 0;
     background: radial-gradient(circle, rgba(120,140,255,0.15), transparent);
+    animation: float 12s infinite alternate;
+}
+
+.nebula:nth-child(1){ top:10%; left:15%; }
+.nebula:nth-child(2){ bottom:10%; right:10%; }
+
+@keyframes float {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(-40px);}
 }
 
 /* ===== HEADER ===== */
 header {
+    position: relative;
+    z-index: 50;
     display: flex;
     justify-content: space-between;
     padding: 20px 30px;
-}
-
-.nav-btn {
-    padding: 8px 14px;
-    border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 /* ===== HERO ===== */
 .hero {
-    padding: 90px 100px;
+    position: relative;
+    z-index: 10;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 90px 100px 0 100px;
 }
 
+/* ===== PROFILE IMAGE ===== */
 .profile-img {
     width: 420px;
-}
-
-/* ===== SKILLS ===== */
-.skill-box {
-    padding: 10px 20px;
-    border: 1px solid white;
+    height: auto;
     border-radius: 20px;
+    mix-blend-mode: lighten;
+    filter: drop-shadow(0 0 25px rgba(120,140,255,0.4));
+    background: rgba(255,255,255,0.03);
+    padding: 10px;
 }
 
-/* MOBILE */
-@media (max-width:768px){
-
-.hero{
-    padding:50px 20px;
+/* ===== BOX STYLE ===== */
+.box {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
-.animated-name{
-    font-size:40px;
+.skill-box {
+    padding: 14px 22px;
+    border-radius: 25px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
 }
 
-.profile-img{
-    width:260px;
-}
-
+/* ===== BUTTON ===== */
+.hire-btn {
+    font-size: 18px;
+    color: white;
+    padding: 14px 34px;
+    margin-top: 25px;
+    border: 2px solid rgba(255,255,255,0.35);
+    border-radius: 30px;
+    display: inline-block;
 }
 
 </style>
@@ -125,67 +180,85 @@ header {
 
 <body>
 
+<!-- BACKGROUND -->
+<div class="nebula"></div>
+<div class="nebula"></div>
+<div class="stars" id="stars"></div>
+
+<script>
+const stars = document.getElementById("stars");
+for(let i=0;i<120;i++){
+    let s=document.createElement("span");
+    s.style.top=Math.random()*100+"vh";
+    s.style.left=Math.random()*100+"vw";
+    stars.appendChild(s);
+}
+</script>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">AK.</div>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#courses">Courses</a>
+    </nav>
+</header>
+
 <!-- HERO -->
 <section class="hero">
-<div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;">
+    <div>
+        <h2>Hello, I'm</h2>
 
-<div>
-<h2>Hello, I'm</h2>
-<h1 class="animated-name">Amna Kashif</h1>
+        <h1 class="animated-name">Amna Kashif</h1>
 
-<p>
-Amazon Virtual Assistant <br>
-Helping Amazon sellers optimize listings, manage stores, and increase sales.
-</p>
-</div>
+        <p>
+            Amazon Virtual Assistant <br>
+            Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
+        </p>
 
-<div>
-<img src="my img.jpeg" class="profile-img">
-</div>
+        <a class="hire-btn" href="#contact">Hire Me</a>
+    </div>
 
-</div>
+    <img src="my img.jpeg" class="profile-img">
 </section>
 
 <!-- ABOUT -->
-<section id="about" style="padding:40px 20px; display:flex; justify-content:center;">
-<div style="max-width:900px; text-align:center;">
+<section id="about">
+    <div class="box">
+        <h2 class="animated-name">About Me</h2>
 
-<h2 class="animated-name" style="font-size:42px;">About Me</h2>
-
-<p>
-I am a dedicated Amazon Virtual Assistant helping businesses grow with product research,
-SEO, and account management.
-</p>
-
-</div>
+        <p>I am a dedicated Amazon Virtual Assistant...</p>
+        <p>With deep understanding of Amazon algorithms...</p>
+        <p>I provide reliable, timely services...</p>
+    </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" style="padding:40px 20px; text-align:center;">
+<section id="skills">
+    <div class="box">
+        <h2 class="animated-name">Skills</h2>
 
-<h2 class="animated-name" style="font-size:42px;">Skills</h2>
-
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
-
-<div class="skill-box">Product Research</div>
-<div class="skill-box">Keyword Research</div>
-<div class="skill-box">Listing Optimization</div>
-<div class="skill-box">Amazon SEO</div>
-<div class="skill-box">PPC</div>
-
-</div>
-
+        <div style="display:flex; flex-wrap:wrap; gap:15px;">
+            <div class="skill-box">Product Research</div>
+            <div class="skill-box">Keyword Research</div>
+            <div class="skill-box">Listing Optimization</div>
+            <div class="skill-box">Amazon SEO</div>
+            <div class="skill-box">PPC</div>
+        </div>
+    </div>
 </section>
 
 <!-- COURSES -->
-<section id="courses" style="padding:40px 20px; text-align:center;">
+<section id="courses">
+    <div class="box">
+        <h2 class="animated-name">Courses</h2>
 
-<h2 class="animated-name" style="font-size:42px;">Courses</h2>
-
-<p>Amazon Digital Mastery (Enablers)</p>
-<p>Amazon VA Course (DigiSkills)</p>
-<p>Freelancing (DigiSkills)</p>
-
+        <p>Amazon Digital Mastery (Enablers)</p>
+        <p>Amazon VA Course (DigiSkills)</p>
+        <p>Freelancing Course (DigiSkills)</p>
+    </div>
 </section>
 
 </body>

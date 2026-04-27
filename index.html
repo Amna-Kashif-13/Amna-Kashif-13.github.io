@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- ✅ ADDED FOR MOBILE -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Amna Kashif Portfolio</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
@@ -208,251 +212,28 @@ header {
                 0 0 30px rgba(150,180,255,0.2);
 }
 
- <!-- COURSES SECTION -->
-<section id="courses" style="
-    position: relative;
-    z-index: 10;
-    padding: 80px 100px;
-    display: flex;
-    justify-content: center;
-">
+/* ✅ MOBILE RESPONSIVE FIX */
+@media (max-width: 768px) {
 
-<div style="
-    max-width: 850px;
-    padding: 45px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
-">
+    .animated-name {
+        font-size: 40px;
+    }
 
-    <h2 class="animated-name" style="font-size:44px; margin-bottom:30px; text-align:center;">
-        Courses
-    </h2>
+    .hero p {
+        font-size: 1rem;
+    }
 
-    <p style="font-size:20px; color:#ffffff; line-height:1.8; margin-bottom:18px;">
-        • Amazon Digital Mastery Course  
-        <br>
-        <span style="color:#dcdcdc;">(Enablers Institute)</span>
-    </p>
+    .profile-img {
+        width: 280px;
+    }
 
-    <p style="font-size:20px; color:#ffffff; line-height:1.8; margin-bottom:18px;">
-        • Amazon Virtual Assistant Course  
-        <br>
-        <span style="color:#dcdcdc;">(DigiSkills)</span>
-    </p>
-
-    <p style="font-size:20px; color:#ffffff; line-height:1.8;">
-        • Freelancing Course  
-        <br>
-        <span style="color:#dcdcdc;">(DigiSkills)</span>
-    </p>
-
-</div>
-
-</section>
-    
-
+}
 
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
-<div class="nebula"></div>
-<div class="nebula"></div>
-<div class="stars" id="stars"></div>
-
-<script>
-const stars = document.getElementById("stars");
-
-for(let i=0;i<120;i++){
-    let s=document.createElement("span");
-    s.style.top=Math.random()*100+"vh";
-    s.style.left=Math.random()*100+"vw";
-    s.style.animationDuration=(2+Math.random()*5)+"s";
-    stars.appendChild(s);
-}
-</script>
-
-<!-- HEADER -->
-<header>
-    <div class="logo">AK<span style="color:white;">.</span></div>
-
-    <nav style="display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="nav-btn" href="#about">About</a>
-        <a class="nav-btn" href="#skills">Skills</a>
-        <a class="nav-btn" href="#courses">Courses</a>
-        <a class="nav-btn" href="#projects">Projects</a>
-        <a class="nav-btn" href="#experience">Experience</a>
-        <a class="nav-btn" href="#contact">Contact</a>
-    </nav>
-</header>
-
 <!-- HERO -->
 <section class="hero">
-    <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
-
-        <!-- LEFT TEXT -->
-        <div>
-            <h2>Hello, I'm</h2>
-
-            <h1 class="animated-name">
-                Amna Kashif
-            </h1>
-
-            <p>
-                Amazon Virtual Assistant <br>
-                Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
-            </p>
-
-            <a href="#contact" class="hire-btn">
-                Hire Me
-            </a>
-        </div>
-
-        <!-- RIGHT IMAGE -->
-        <div>
-            <img src="my img.jpeg" class="profile-img">
-        </div>
-
-    </div>
-</section>
-
-<!-- ABOUT SECTION -->
-<section id="about" style="
-    position: relative;
-    z-index: 10;
-    padding: 40px 20px 80px 20px; 
-    display: flex;
-    justify-content: center;   /* 👈 CENTER */
-    align-items: center;
-">
-
-<div style="
-    width: 100%;
-    max-width: 1000px;   /* 👈 thora wide (horizontal feel) */
-    padding: 40px 60px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
-    text-align: center;   /* 👈 center text */
-">
-
-    <!-- HEADING -->
-    <h2 class="animated-name" style="font-size:42px; margin-bottom:25px;">
-        About Me
-    </h2>
-
-    <!-- TEXT -->
-    <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
-        I am a dedicated and detail-oriented <span style="color:white; font-weight:600;">Amazon Virtual Assistant</span> 
-        with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. 
-        I specialize in product research, keyword optimization, product listing creation, and account management.
-    </p>
-
-    <p style="font-size:18px; color:#dcdcdc; line-height:1.8; margin-bottom:20px;">
-        With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is 
-        completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, 
-        improves visibility, and enhances overall store performance.
-    </p>
-
-    <p style="font-size:18px; color:#dcdcdc; line-height:1.8;">
-        I am committed to delivering reliable, timely, and results-driven services while maintaining clear 
-        communication with my clients.
-    </p>
-
-</div>
-
-</section>
-
-<!-- SKILLS SECTION -->
-<section id="skills" style="
-    position: relative;
-    z-index: 10;
-    padding: 60px 100px 120px 100px;
-    display: flex;
-    justify-content: center;   /* 👈 CENTER */
-    align-items: center;
-">
-
-<div style="
-    width: 100%;
-    max-width: 1000px;   /* 👈 horizontal feel */
-    padding: 40px 60px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.04);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.25);
-    text-align: center;
-">
-
-    <!-- HEADING -->
-    <h2 class="animated-name" style="font-size:42px; margin-bottom:30px;">
-        Skills
-    </h2>
-
-    <!-- SKILLS LIST -->
-    <div style="
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    ">
-
-        <div class="skill-box">Product Research</div>
-        <div class="skill-box">Keyword Research</div>
-        <div class="skill-box">Listing Optimization</div> <!-- 👈 ADDED -->
-        <div class="skill-box">Product Listing</div>
-        <div class="skill-box">Amazon SEO</div>
-        <div class="skill-box">Account Management</div>
-        <div class="skill-box">PPC Campaigns</div>
-        <div class="skill-box">Competitor Analysis</div>
-        <div class="skill-box">A+ Content</div>
-
-    </div>
-
-</div>
-
-</section>
-
-    <!-- COURSES SECTION -->
-<section id="courses" style="
-    position: relative;
-    z-index: 10;
-    padding: 80px 100px;
-    text-align: center;
-">
-
-    <h2 class="animated-name" style="font-size:42px; margin-bottom:40px;">
-        Courses
-    </h2>
-
-    <div class="course-box">
-
-        <div class="course-item">
-            Amazon Digital Mastery Course  
-            <br>
-            <small>From Enablers</small>
-        </div>
-
-        <div class="course-item">
-            Amazon Virtual Assistant Course  
-            <br>
-            <small>From DigiSkills</small>
-        </div>
-
-        <div class="course-item">
-            Freelancing Course  
-            <br>
-            <small>From DigiSkills</small>
-        </div>
-
-    </div>
-
-</section>
-
-</body>
-</html>
+    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; width:100%; gap:30px;">

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ✅ ADDED FOR MOBILE -->
+<!-- ✅ MOBILE FIX -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Amna Kashif Portfolio</title>
@@ -212,11 +212,15 @@ header {
                 0 0 30px rgba(150,180,255,0.2);
 }
 
-/* ✅ MOBILE RESPONSIVE FIX */
+/* ✅ MOBILE RESPONSIVE */
 @media (max-width: 768px) {
 
     .animated-name {
         font-size: 40px;
+    }
+
+    .hero {
+        padding: 60px 20px 0 20px;
     }
 
     .hero p {
@@ -228,12 +232,71 @@ header {
     }
 
 }
-
 </style>
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
+<div class="nebula"></div>
+<div class="nebula"></div>
+<div class="stars" id="stars"></div>
+
+<script>
+const stars = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+    let s=document.createElement("span");
+    s.style.top=Math.random()*100+"vh";
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDuration=(2+Math.random()*5)+"s";
+    stars.appendChild(s);
+}
+</script>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">AK<span style="color:white;">.</span></div>
+
+    <nav style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="nav-btn" href="#about">About</a>
+        <a class="nav-btn" href="#skills">Skills</a>
+        <a class="nav-btn" href="#courses">Courses</a>
+        <a class="nav-btn" href="#projects">Projects</a>
+        <a class="nav-btn" href="#experience">Experience</a>
+        <a class="nav-btn" href="#contact">Contact</a>
+    </nav>
+</header>
+
 <!-- HERO -->
 <section class="hero">
     <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; width:100%; gap:30px;">
+
+        <div>
+            <h2>Hello, I'm</h2>
+
+            <h1 class="animated-name">
+                Amna Kashif
+            </h1>
+
+            <p>
+                Amazon Virtual Assistant <br>
+                Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.
+            </p>
+
+            <a href="#contact" class="hire-btn">
+                Hire Me
+            </a>
+        </div>
+
+        <div>
+            <img src="my img.jpeg" class="profile-img">
+        </div>
+
+    </div>
+</section>
+
+<!-- BAQI TUMHARA CODE SAME RAHEGA (About, Skills, Courses etc.) -->
+
+</body>
+</html>

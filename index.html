@@ -8,16 +8,16 @@
     <style>
         :root {
             --navy-blue: #0a192f;
-            --pure-white: #ffffff;
-            --light-gray: #ccd6f6;
-            --slate: #8892b0;
+            --gold: #D4AF37; /* Premium Golden Color */
+            --soft-white: #f8f9fa;
+            --gray-text: #a8b2d1;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
 
         body {
             background-color: var(--navy-blue);
-            color: var(--pure-white);
+            color: var(--soft-white);
             overflow-x: hidden;
             line-height: 1.6;
         }
@@ -25,127 +25,97 @@
         /* Star Animation Background */
         .stars-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
         }
 
         .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: blink 2s infinite ease-in-out;
+            position: absolute; background: white; border-radius: 50%;
+            opacity: 0.5; animation: blink 3s infinite ease-in-out;
         }
 
-        @keyframes blink {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
+        @keyframes blink { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
 
         /* Navigation Bar */
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 25, 47, 0.95);
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed; top: 0; width: 100%;
+            background: rgba(10, 25, 47, 0.9);
+            padding: 20px 0; z-index: 1000;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             backdrop-filter: blur(10px);
+            display: flex; justify-content: center;
         }
 
         nav a {
-            color: var(--pure-white);
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            color: var(--soft-white); text-decoration: none;
+            margin: 0 20px; font-weight: 500; font-size: 0.9rem;
+            text-transform: uppercase; transition: 0.3s;
         }
 
-        nav a:hover { color: var(--slate); }
+        nav a:hover { color: var(--gold); }
 
         /* Hero Section */
         header {
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 100px 10% 20px 10%;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 80px 10%;
         }
 
-        .hero-content { flex: 1; padding-right: 20px; }
-        .hero-image { flex: 1; text-align: right; }
+        .hero-left { flex: 1.2; }
+        .hero-right { flex: 0.8; text-align: right; }
 
-        .hero-image img {
-            width: 300px;
-            height: 300px;
-            border-radius: 20px;
+        .hero-left h1 { font-size: 4rem; color: var(--gold); line-height: 1.1; margin-bottom: 10px; }
+        .hero-left h2 { font-size: 1.5rem; color: var(--gray-text); margin-bottom: 15px; border: none; }
+        .hero-left p { max-width: 500px; font-size: 1.1rem; margin-bottom: 25px; color: var(--soft-white); }
+
+        /* Profile Picture Styling */
+        .profile-img {
+            width: 350px; height: 350px;
+            border-radius: 30px;
             object-fit: cover;
-            border: 2px solid var(--pure-white);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 3px solid var(--gold);
+            box-shadow: 0px 0px 20px rgba(212, 175, 55, 0.4);
         }
 
-        h1 { font-size: 3.5rem; margin-bottom: 10px; }
-        .tagline { font-size: 1.2rem; color: var(--slate); margin-bottom: 20px; }
-
+        /* Sections */
         section { padding: 100px 10%; }
-        h2 { font-size: 2rem; margin-bottom: 30px; border-bottom: 1px solid var(--pure-white); display: inline-block; padding-bottom: 5px; }
+        h2 { font-size: 2rem; color: var(--gold); margin-bottom: 30px; border-bottom: 1px solid var(--gold); display: inline-block; }
 
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.03); padding: 30px;
+            border-radius: 15px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: 0.4s;
         }
 
-        .skill-card:hover { background: rgba(255, 255, 255, 0.1); transform: translateY(-5px); }
-        .skill-card i { font-size: 2rem; margin-bottom: 15px; }
+        .skill-card:hover { border-color: var(--gold); transform: translateY(-10px); background: rgba(212, 175, 55, 0.05); }
+        .skill-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
 
-        .project-box {
-            background: rgba(255, 255, 255, 0.03);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 4px solid var(--pure-white);
+        .project-card {
+            background: rgba(255, 255, 255, 0.05); padding: 40px;
+            border-radius: 20px; border-left: 5px solid var(--gold);
         }
 
         .btn {
-            border: 1px solid var(--pure-white);
-            color: var(--pure-white);
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            transition: 0.3s;
-            background: transparent;
+            background: transparent; color: var(--gold);
+            padding: 12px 35px; border: 2px solid var(--gold);
+            border-radius: 5px; text-decoration: none; font-weight: bold;
+            transition: 0.3s; display: inline-block;
         }
 
-        .btn:hover { background: var(--pure-white); color: var(--navy-blue); }
+        .btn:hover { background: var(--gold); color: var(--navy-blue); }
 
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 992px) {
-            header { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
-            .hero-content { padding-right: 0; margin-top: 40px; }
-            .hero-image { text-align: center; margin-bottom: 20px; }
-            .hero-image img { width: 250px; height: 250px; }
-            h1 { font-size: 2.5rem; }
-            nav a { margin: 0 8px; font-size: 0.75rem; }
+            header { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
+            .hero-right { text-align: center; margin-bottom: 40px; }
+            .hero-left h1 { font-size: 3rem; }
+            .profile-img { width: 250px; height: 250px; }
+            nav a { margin: 0 10px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -161,80 +131,71 @@
     </nav>
 
     <header>
-        <div class="hero-content">
+        <div class="hero-left">
             <h1>Amna Kashif</h1>
-            <p class="tagline">Amazon Virtual Assistant</p>
-            <p style="color: var(--light-gray); max-width: 500px;">Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.</p>
-            <a href="#contact" class="btn" style="margin-top: 20px;">Let's Talk</a>
+            <h2>Amazon Virtual Assistant</h2>
+            <p>Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.</p>
+            <a href="#contact" class="btn">Let's Connect</a>
         </div>
-        <div class="hero-image">
-            <img src="myimg.jpeg" alt="Amna Kashif">
+        <div class="hero-right">
+            <img src="myimg.jpeg" alt="Amna Kashif" class="profile-img">
         </div>
     </header>
 
     <section id="about">
         <h2>About Me</h2>
-        <p style="max-width: 800px; font-size: 1.1rem; color: var(--light-gray);">
+        <p style="max-width: 850px; font-size: 1.15rem;">
             I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong> with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. I specialize in product research, keyword optimization, product listing creation, and account management.
             <br><br>
-            With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.
+            With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales and enhances overall store performance.
         </p>
     </section>
 
     <section id="skills">
-        <h2>Core Skills</h2>
+        <h2>Expertise & Skills</h2>
         <div class="skills-grid">
-            <div class="skill-card"><i class="fas fa-search"></i><p>Product Research</p></div>
-            <div class="skill-card"><i class="fas fa-key"></i><p>Keyword Research</p></div>
-            <div class="skill-card"><i class="fas fa-magic"></i><p>Listing Optimization</p></div>
-            <div class="skill-card"><i class="fas fa-rocket"></i><p>Amazon SEO</p></div>
-            <div class="skill-card"><i class="fas fa-user-tie"></i><p>Account Management</p></div>
-            <div class="skill-card"><i class="fas fa-ad"></i><p>PPC Campaigns</p></div>
-            <div class="skill-card"><i class="fas fa-chart-bar"></i><p>Competitor Analysis</p></div>
-            <div class="skill-card"><i class="fas fa-layer-group"></i><p>A+ Content</p></div>
+            <div class="skill-card"><i class="fas fa-search-plus"></i><h3>Product Research</h3></div>
+            <div class="skill-card"><i class="fas fa-key"></i><h3>Keyword Research</h3></div>
+            <div class="skill-card"><i class="fas fa-list-ul"></i><h3>Listing Optimization</h3></div>
+            <div class="skill-card"><i class="fas fa-bullhorn"></i><h3>PPC Campaigns</h3></div>
+            <div class="skill-card"><i class="fas fa-chart-line"></i><h3>Competitor Analysis</h3></div>
+            <div class="skill-card"><i class="fas fa-user-shield"></i><h3>Account Management</h3></div>
         </div>
     </section>
 
     <section id="experience">
-        <h2>Experience & Projects</h2>
-        <div class="project-box">
-            <h3>USA Market Expert</h3>
-            <p style="color: var(--slate); margin-bottom: 15px;">Product Hunting Specialist</p>
-            <p>Successfully completed 5 winning product hunting projects for the USA market. My work includes providing detailed analysis sheets, sourcing strategies, and high-converting listing drafts. I focus on finding low-competition but high-demand opportunities.</p>
+        <h2>Experience</h2>
+        <div class="project-card">
+            <h3>USA Market: 5 Winning Projects</h3>
+            <p style="color: var(--gold); margin: 10px 0;">Product Hunting & Sourcing</p>
+            <p>Successfully delivered high-potential products for the USA market. My expertise includes in-depth hunting, reliable sourcing, and creating high-converting listings based on Amazon's latest SEO trends.</p>
         </div>
     </section>
 
     <section id="contact" style="text-align: center;">
-        <h2>Get In Touch</h2>
-        <p style="margin-bottom: 30px; color: var(--slate);">Ready to take your Amazon store to the next level?</p>
+        <h2>Hire Me</h2>
+        <p style="margin-bottom: 30px;">Ready to grow your Amazon business together?</p>
         <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="btn">
             <i class="fab fa-linkedin"></i> Connect on LinkedIn
         </a>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: var(--slate); font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.05);">
-        &copy; 2024 Amna Kashif. All Rights Reserved.
+    <footer style="text-align: center; padding: 50px; color: var(--gray-text); font-size: 0.9rem;">
+        &copy; 2024 Amna Kashif | Professional Amazon VA Portfolio
     </footer>
 
     <script>
-        // Blinking Stars Generator
+        // Stars Animation Generator
         const starField = document.getElementById('starField');
-        const starCount = 120;
-
+        const starCount = 100;
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             star.className = 'star';
-            const x = Math.random() * 100;
-            const y = Math.random() * 100;
-            const size = Math.random() * 2 + 1;
-            const delay = Math.random() * 5;
-
-            star.style.left = x + '%';
-            star.style.top = y + '%';
-            star.style.width = size + 'px';
-            star.style.height = size + 'px';
-            star.style.animationDelay = delay + 's';
-
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            const size = Math.random() * 2 + 1 + 'px';
+            star.style.width = size; star.style.height = size;
+            star.style.animationDelay = Math.random() * 5 + 's';
             starField.appendChild(star);
         }
     </script>

@@ -17,38 +17,40 @@
 
         /* Navigation */
         nav {
-            position: fixed; top: 0; width: 100%; height: 75px;
+            position: fixed; top: 0; width: 100%; height: 80px;
             background: rgba(10, 25, 47, 0.98); display: flex;
             justify-content: space-between; align-items: center;
             padding: 0 8%; z-index: 1000; border-bottom: 1px solid var(--gold);
         }
         .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--gold); font-weight: bold; }
-        .logo-box { background: var(--gold); color: var(--navy); width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; }
+        .logo-box { background: var(--gold); color: var(--navy); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 1.2rem; }
+        .logo-name { font-size: 1.2rem; }
 
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 20px; }
-        .nav-links a { text-decoration: none; color: white; font-size: 0.85rem; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.9rem; text-transform: uppercase; font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
 
-        .menu-btn { display: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
+        .menu-btn { display: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; }
 
         /* Hero Section */
         header { min-height: 85vh; display: flex; align-items: center; justify-content: space-between; padding: 120px 10% 40px; }
-        .hero-text { flex: 1.2; }
-        .hero-text h1 { font-size: 3.5rem; color: var(--gold); }
-        .hero-text p { margin: 20px 0; max-width: 550px; font-size: 1.1rem; }
+        .hero-text { flex: 1.2; padding-right: 20px; }
+        .hero-text h1 { font-size: 4rem; color: var(--gold); line-height: 1.1; }
+        .hero-text h2 { font-size: 1.8rem; color: var(--slate); margin-bottom: 15px; }
+        .hero-text p { max-width: 550px; margin-bottom: 30px; font-size: 1.2rem; color: var(--white); }
 
-        /* CIRCLE PHOTO CSS */
+        /* FIXED CIRCLE PHOTO CSS */
         .hero-img { flex: 0.8; display: flex; justify-content: flex-end; }
         .circle-photo {
-            width: 250px; height: 250px;
+            width: 300px; height: 300px; /* Large Circular Size */
             border-radius: 50% !important; 
             border: 4px solid var(--gold);
             overflow: hidden; 
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
         .circle-photo img { 
             width: 100%; 
@@ -58,29 +60,43 @@
         }
 
         /* Common Section Styling */
-        section { padding: 80px 10%; }
-        .title { color: var(--gold); font-size: 2rem; margin-bottom: 25px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        section { padding: 100px 10%; }
+        .title { color: var(--gold); font-size: 2.2rem; margin-bottom: 30px; border-bottom: 2px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        
+        /* Larger Inner Text */
+        .inner-text { font-size: 1.2rem; line-height: 1.9; max-width: 900px; color: var(--white); }
+        .inner-text strong { color: var(--gold); }
 
-        /* Grid for Skills & Courses */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        /* Skills Grid - Responsive for many skills */
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 25px; 
+            margin-top: 30px;
+        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px; border: 1px solid rgba(212,175,55,0.2); text-align: center; transition: 0.3s; }
         .card:hover { transform: translateY(-10px); border-color: var(--gold); background: rgba(212,175,55,0.1); }
         .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
-        .card h3 { color: var(--gold); margin-bottom: 10px; font-size: 1.2rem; }
+        .card h3 { color: var(--gold); margin-bottom: 10px; font-size: 1.3rem; }
 
         /* Contact Button */
         .btn-gold {
-            background: var(--gold); color: var(--navy); padding: 12px 35px; border-radius: 50px;
+            background: var(--gold); color: var(--navy) !important; padding: 15px 40px; border-radius: 50px;
             text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;
-            transition: 0.3s; margin-top: 20px;
+            transition: 0.3s; margin-top: 25px; font-size: 1.1rem;
+            box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
         }
         .btn-gold:hover { transform: scale(1.05); background: white; }
 
         /* Mobile View */
         @media (max-width: 992px) {
+            nav { height: 70px; padding: 0 5%; }
+            .logo-box { width: 35px; height: 35px; font-size: 1rem; }
+            .logo-name { font-size: 1rem; }
             .menu-btn { display: block; }
             .nav-links {
-                display: none; position: absolute; top: 75px; left: 0; width: 100%;
+                display: none; position: absolute; top: 70px; left: 0; width: 100%;
                 background: var(--navy); flex-direction: column; padding: 30px 0;
                 border-bottom: 1px solid var(--gold);
             }
@@ -89,7 +105,10 @@
             header { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
             .hero-img { justify-content: center; margin-bottom: 40px; }
             .circle-photo { width: 220px; height: 220px; }
-            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text h1 { font-size: 3rem; }
+            section { padding: 70px 5%; }
+            .title { font-size: 1.8rem; }
+            .inner-text { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -98,7 +117,7 @@
 <div class="stars" id="stars"></div>
 
 <nav>
-    <a href="#" class="logo"><div class="logo-box">AK</div> AMNA KASHIF</a>
+    <a href="#" class="logo"><div class="logo-box">AK</div> <span class="logo-name">AMNA KASHIF</span></a>
     <div class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
@@ -112,7 +131,7 @@
 <header>
     <div class="hero-text">
         <h1>Amna Kashif</h1>
-        <p style="color:var(--gold); font-size: 1.5rem; font-weight: 600;">Amazon Virtual Assistant</p>
+        <h2>Amazon Virtual Assistant</h2>
         <p>Helping Amazon sellers optimize listings, manage stores, and increase sales with professional virtual assistance.</p>
         <a href="#contact" class="btn-gold">Hire Me Now</a>
     </div>
@@ -125,43 +144,31 @@
 
 <section id="about">
     <h2 class="title">About Me</h2>
-    <p style="line-height: 1.8; font-size: 1.1rem; max-width: 900px;">
+    <div class="inner-text">
         I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.
-    </p>
+    </div>
 </section>
 
 <section id="skills">
     <h2 class="title">My Skills</h2>
-    <div class="grid">
-        <div class="card">
-            <i class="fas fa-search-dollar"></i>
-            <h3>Product Research</h3>
-            <p>Finding high-demand, low-competition winning products.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-file-alt"></i>
-            <h3>Listing Optimization</h3>
-            <p>Writing SEO-friendly titles, bullets, and descriptions.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-chart-line"></i>
-            <h3>PPC Management</h3>
-            <p>Managing Amazon ads to lower ACOS and increase ROAS.</p>
-        </div>
-        <div class="card">
-            <i class="fas fa-user-cog"></i>
-            <h3>Account Management</h3>
-            <p>Handling Seller Central from A to Z.</p>
-        </div>
+    <div class="skills-grid">
+        <div class="card"><i class="fas fa-search-dollar"></i><h3>Product Research</h3></div>
+        <div class="card"><i class="fas fa-key"></i><h3>Keyword Research</h3></div>
+        <div class="card"><i class="fas fa-magic"></i><h3>Listing Optimization</h3></div>
+        <div class="card"><i class="fas fa-rocket"></i><h3>Amazon SEO</h3></div>
+        <div class="card"><i class="fas fa-tasks"></i><h3>Account Management</h3></div>
+        <div class="card"><i class="fas fa-ad"></i><h3>PPC Campaigns</h3></div>
+        <div class="card"><i class="fas fa-chart-pie"></i><h3>Competitor Analysis</h3></div>
+        <div class="card"><i class="fas fa-layer-group"></i><h3>A+ Content</h3></div>
     </div>
 </section>
 
 <section id="courses">
     <h2 class="title">Courses</h2>
     <div class="grid">
-        <div class="card"><h3>Amazon Digital Mastery</h3><p>from Enablers</p></div>
-        <div class="card"><h3>Amazon Virtual Assistant</h3><p>from DigiSkills</p></div>
-        <div class="card"><h3>Freelancing</h3><p>from DigiSkills</p></div>
+        <div class="card"><h3>Amazon Digital Mastery</h3><p class="inner-text" style="font-size:1rem; color:var(--slate);">from Enablers</p></div>
+        <div class="card"><h3>Amazon Virtual Assistant</h3><p class="inner-text" style="font-size:1rem; color:var(--slate);">from DigiSkills</p></div>
+        <div class="card"><h3>Freelancing</h3><p class="inner-text" style="font-size:1rem; color:var(--slate);">from DigiSkills</p></div>
     </div>
 </section>
 
@@ -169,21 +176,20 @@
     <h2 class="title">Experience</h2>
     <div class="card" style="text-align: left; border-left: 5px solid var(--gold);">
         <h3>USA Market Specialist</h3>
-        <p style="margin-top:10px; line-height: 1.6;">Successfully hunted 5 winning products for USA clients and provided sourcing services. Hands-on experience in Seller Central management.</p>
+        <p class="inner-text" style="margin-top:15px;">Successfully hunted 5 winning products for USA clients and provided sourcing services. Hands-on experience in Seller Central management.</p>
     </div>
 </section>
 
 <section id="contact" style="text-align: center;">
     <h2 class="title">Contact Me</h2>
-    <p style="font-size: 1.2rem; margin-bottom: 10px;">Ready to grow your business?</p>
-    <p style="color: var(--slate); margin-bottom: 25px;">Let's connect and discuss your Amazon store strategy.</p>
+    <p class="inner-text" style="margin-bottom: 25px;">Ready to grow your business?</p>
     
     <a href="https://www.linkedin.com/in/amna-kashif-va" target="_blank" class="btn-gold">
         <i class="fab fa-linkedin"></i> Connect on LinkedIn
     </a>
 </section>
 
-<footer style="text-align: center; padding: 40px; color: var(--slate); font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.05);">
+<footer style="text-align: center; padding: 40px; color: var(--slate); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
     &copy; 2024 Amna Kashif | Professional Amazon VA
 </footer>
 

@@ -6,7 +6,7 @@
     <title>Amna Kashif | Amazon VA Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #0a192f; --gold: #D4AF37; --white: #ffffff; --slate: #ccd6f6; }
+        :root { --navy: #0a192f; --gold: #D4AF37; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--navy); color: var(--white); overflow-x: hidden; }
 
@@ -29,7 +29,6 @@
         .nav-links li { margin-left: 25px; }
         .nav-links a { text-decoration: none; color: white; font-size: 1rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
-
         .menu-btn { display: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
 
         /* Hero Section */
@@ -39,66 +38,48 @@
         .hero-text h2 { font-size: 2rem; color: #8892b0; margin-bottom: 20px; }
         .hero-text p { max-width: 600px; margin-bottom: 35px; font-size: 1.4rem; color: var(--white); line-height: 1.6; }
 
-        /* CIRCLE PHOTO FIX */
+        /* Circle Photo */
         .hero-img { flex: 0.8; display: flex; justify-content: flex-end; }
         .circle-photo {
-            width: 320px; height: 320px; 
-            border-radius: 50% !important; 
-            border: 5px solid var(--gold);
-            overflow: hidden; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 320px; height: 320px; border-radius: 50% !important; border: 5px solid var(--gold);
+            overflow: hidden; display: flex; justify-content: center; align-items: center;
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
         }
-        .circle-photo img { 
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
-        }
+        .circle-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
-        /* Section Titles */
+        /* Titles */
         section { padding: 100px 10%; }
         .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 40px; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 8px; }
         
         /* Inner Text Global White */
-        .inner-text { font-size: 1.45rem; line-height: 2; max-width: 1000px; color: #ffffff !important; }
+        .inner-text { font-size: 1.45rem; line-height: 1.8; max-width: 1000px; color: #ffffff !important; }
         .inner-text strong { color: var(--gold); }
 
-        /* Cards Styling */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .card { 
-            background: rgba(255,255,255,0.05); 
-            padding: 40px 30px; 
-            border-radius: 20px; 
-            border: 1px solid rgba(212,175,55,0.2); 
-            text-align: center; 
-            transition: 0.4s; 
+            background: rgba(255,255,255,0.05); padding: 40px 30px; border-radius: 20px; 
+            border: 1px solid rgba(212,175,55,0.2); text-align: center; transition: 0.4s; 
         }
         .card:hover { transform: translateY(-10px); border-color: var(--gold); background: rgba(212,175,55,0.1); }
         .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
         .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.6rem; }
-        
-        /* White Text inside Skills Cards */
-        .card p { font-size: 1.25rem; color: #ffffff !important; line-height: 1.5; }
+        .card p { font-size: 1.2rem; color: #ffffff !important; line-height: 1.5; }
 
         .btn-gold {
             background: var(--gold); color: var(--navy) !important; padding: 18px 45px; border-radius: 50px;
             text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 12px;
-            transition: 0.3s; margin-top: 30px; font-size: 1.2rem;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+            transition: 0.3s; margin-top: 30px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
         }
         .btn-gold:hover { transform: scale(1.08); background: white; }
 
-        /* Mobile Adjustments */
         @media (max-width: 992px) {
             header { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
             .hero-img { justify-content: center; margin-bottom: 50px; }
             .circle-photo { width: 260px; height: 260px; }
             .hero-text h1 { font-size: 3.5rem; }
             .menu-btn { display: block; }
-            .nav-links {
-                display: none; position: absolute; top: 85px; left: 0; width: 100%;
-                background: var(--navy); flex-direction: column; padding: 40px 0;
-            }
+            .nav-links { display: none; position: absolute; top: 85px; left: 0; width: 100%; background: var(--navy); flex-direction: column; padding: 40px 0; }
             .nav-links.active { display: flex; }
             .nav-links li { margin: 15px 0; text-align: center; }
         }
@@ -137,7 +118,9 @@
 <section id="about">
     <h2 class="title">About Me</h2>
     <div class="inner-text">
-        I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.
+        <p>I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.</p>
+        <br>
+        <p>Beyond technical execution, I am passionate about understanding market psychology and consumer behavior. I believe that a successful Amazon business is built on a foundation of deep data analysis and creative problem-solving. Whether it's finding a hidden gem product or crafting a listing that converts, I treat every client's store as if it were my own, ensuring maximum growth and professional handling of every detail.</p>
     </div>
 </section>
 
@@ -146,8 +129,12 @@
     <div class="grid">
         <div class="card"><i class="fas fa-search-dollar"></i><h3>Product Research</h3><p>Finding profitable products with high demand and low competition.</p></div>
         <div class="card"><i class="fas fa-key"></i><h3>Keyword Research</h3><p>Advanced keyword extraction using Helium 10 & Jungle Scout.</p></div>
-        <div class="card"><i class="fas fa-rocket"></i><h3>Amazon SEO</h3><p>Optimizing rankings to bring your products to the first page.</p></div>
-        <div class="card"><i class="fas fa-tasks"></i><h3>Account Management</h3><p>Complete Seller Central handling from A to Z.</p></div>
+        <div class="card"><i class="fas fa-magic"></i><h3>Listing Optimization</h3><p>Creating SEO-friendly titles and high-converting bullet points.</p></div>
+        <div class="card"><i class="fas fa-rocket"></i><h3>Amazon SEO</h3><p>Optimizing organic rankings to bring products to the first page.</p></div>
+        <div class="card"><i class="fas fa-tasks"></i><h3>Account Management</h3><p>Complete Seller Central handling including case logs and inventory.</p></div>
+        <div class="card"><i class="fas fa-ad"></i><h3>PPC Campaigns</h3><p>Setting up and managing Amazon Ads to reduce ACOS.</p></div>
+        <div class="card"><i class="fas fa-chart-pie"></i><h3>Competitor Analysis</h3><p>Deep dive into competitor strategies to gain a market edge.</p></div>
+        <div class="card"><i class="fas fa-layer-group"></i><h3>A+ Content</h3><p>Designing Enhanced Brand Content for better brand storytelling.</p></div>
     </div>
 </section>
 
@@ -164,9 +151,9 @@
     <h2 class="title">Professional Experience</h2>
     <div class="card" style="text-align: left; border-left: 6px solid var(--gold); padding: 40px;">
         <div class="inner-text">
-            <p><strong>• USA Market:</strong> Successfully hunted 5 winning products with high profit margins. Managed sourcing and listing optimization for diverse categories.</p>
+            <p><strong>• USA Market:</strong> Successfully hunted 5 winning products with high profit margins. Managed sourcing leads and listing optimization for diverse categories.</p>
             <br>
-            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends. Conducted winning product hunting and prepared detailed <strong>Sourcing Sheets</strong> for clients to ensure smooth procurement.</p>
+            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends. Conducted winning product hunting and prepared detailed <strong>Sourcing Sheets</strong> for clients to ensure smooth procurement and supplier communication.</p>
         </div>
     </div>
 </section>
@@ -184,7 +171,6 @@
 </footer>
 
 <script>
-    // Stars Generator
     const s = document.getElementById('stars');
     for(let i=0; i<80; i++){
         let d = document.createElement('div');
@@ -194,8 +180,6 @@
         d.style.width='2px'; d.style.height='2px';
         s.appendChild(d);
     }
-
-    // Mobile Menu Toggle
     const btn = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
     btn.onclick = () => links.classList.toggle('active');

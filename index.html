@@ -8,12 +8,15 @@
     <style>
         :root { --navy: #0a192f; --gold: #D4AF37; --white: #ffffff; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
-        body { background-color: var(--navy); color: var(--white); overflow-x: hidden; }
+        body { background-color: var(--navy); color: var(--white); overflow-x: hidden; position: relative; }
 
-        /* Stars Background */
-        .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: #050a14; }
+        /* Stars Background Fix */
+        .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; background: #050a14; pointer-events: none; }
         .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: blink 3s infinite; }
         @keyframes blink { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+
+        /* General Section Fix for Laptop */
+        section { position: relative; z-index: 10; padding: 60px 10%; }
 
         /* Navigation */
         nav {
@@ -32,28 +35,24 @@
         .menu-btn { display: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; }
 
         /* Hero Section */
-        header { min-height: 85vh; display: flex; align-items: center; justify-content: space-between; padding: 80px 10% 20px; gap: 20px; }
+        header { position: relative; z-index: 10; min-height: 85vh; display: flex; align-items: center; justify-content: space-between; padding: 80px 10% 20px; gap: 20px; }
         .hero-text { flex: 1.2; text-align: left; }
         .hero-text h1 { font-size: 4rem; color: var(--gold); line-height: 1.1; margin-bottom: 10px; }
         .hero-text h2 { font-size: 1.8rem; color: #8892b0; margin-bottom: 15px; }
         .hero-text p { max-width: 600px; margin-bottom: 25px; font-size: 1.3rem; color: var(--white); line-height: 1.5; }
 
-        /* Circle Photo - Size Slightly Reduced */
+        /* Circle Photo - Small Elegant Size */
         .hero-img { flex: 0.8; display: flex; justify-content: flex-end; }
         .circle-photo {
-            width: 260px; height: 260px; border-radius: 50% !important; border: 5px solid var(--gold);
+            width: 250px; height: 250px; border-radius: 50% !important; border: 4px solid var(--gold);
             overflow: hidden; display: flex; justify-content: center; align-items: center;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
         .circle-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
-        /* Section Spacing */
-        section { padding: 60px 10%; position: relative; z-index: 10; } 
         .title { color: var(--gold); font-size: 2.2rem; margin-bottom: 20px; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 5px; text-transform: uppercase; }
-        
         .inner-text { font-size: 1.3rem; line-height: 1.6; max-width: 1000px; color: #ffffff !important; }
-        .inner-text strong { color: var(--gold); }
-
+        
         /* Grid */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { 
@@ -69,37 +68,27 @@
             background: var(--gold); color: var(--navy) !important; padding: 14px 35px; border-radius: 50px;
             text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 10px;
             transition: 0.3s; margin-top: 15px; font-size: 1.1rem; box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
-            cursor: pointer;
+            cursor: pointer; position: relative; z-index: 20;
         }
         .btn-gold:hover { transform: scale(1.05); background: white; }
 
-        /* MOBILE VIEW FIXES */
-        @media (max-width: 992px) {
-            header { 
-                flex-direction: column-reverse; 
-                text-align: center; 
-                padding-top: 120px; 
-                min-height: auto;
-            }
-            .hero-text { text-align: center; padding-right: 0; }
-            .hero-text h1 { font-size: 2.8rem; }
-            .hero-text h2 { font-size: 1.5rem; }
-            .hero-text p { margin: 0 auto 20px; font-size: 1.1rem; }
-            
-            .hero-img { justify-content: center; margin-bottom: 30px; }
-            .circle-photo { width: 200px; height: 200px; }
-            
-            section { padding: 35px 6%; text-align: center; } 
-            .inner-text { font-size: 1.1rem; margin: 0 auto; }
-            .title { font-size: 1.8rem; }
+        /* Laptop Specific Fix for Contact Section */
+        #contact { display: block !important; visibility: visible !important; padding-bottom: 100px; }
 
+        /* MOBILE VIEW */
+        @media (max-width: 992px) {
+            header { flex-direction: column-reverse; text-align: center; padding-top: 120px; min-height: auto; }
+            .hero-text { text-align: center; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .circle-photo { width: 200px; height: 200px; }
+            section { padding: 40px 6%; text-align: center; }
             .menu-btn { display: block; }
             .nav-links { 
                 display: none; position: absolute; top: 70px; left: 0; width: 100%; 
                 background: var(--navy); flex-direction: column; padding: 20px 0; 
             }
             .nav-links.active { display: flex; }
-            .nav-links li { margin: 10px 0; text-align: center; margin-left: 0; }
+            .nav-links li { margin: 10px 0; margin-left: 0; }
         }
     </style>
 </head>
@@ -128,7 +117,7 @@
     </div>
     <div class="hero-img">
         <div class="circle-photo">
-            <img src="myimg.jpeg" alt="Amna Kashif Profile Image">
+            <img src="image_68ebc3.jpg" alt="Amna Kashif Profile Image">
         </div>
     </div>
 </header>
@@ -170,14 +159,14 @@
     <h2 class="title">Experience</h2>
     <div class="card" style="text-align: left; border-left: 6px solid var(--gold); padding: 25px;">
         <div class="inner-text">
-            <p><strong>• USA Market Specialist:</strong> Successfully completed 5 winning product hunting projects specifically targeted for the highly competitive USA market. My expertise lies in depth hunting, reliable sourcing, and creating optimized listing content that converts. I have hands-on experience managing USA market competition and providing professional sourcing leads.</p>
+            <p><strong>• USA Market Specialist:</strong> Successfully completed 5 winning product hunting projects specifically targeted for the highly competitive USA market.</p>
             <br>
-            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends and consumer behavior. Conducted winning product hunting and prepared detailed <strong>Sourcing Sheets</strong> for clients to ensure smooth procurement.</p>
+            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends and conducted winning product hunting with detailed sourcing leads.</p>
         </div>
     </div>
 </section>
 
-<section id="contact" style="text-align: center; margin-bottom: 50px;">
+<section id="contact" style="text-align: center;">
     <h2 class="title">Contact Me</h2>
     <p class="inner-text" style="margin: 0 auto 20px;">Ready to grow? Let's connect!</p>
     <a href="https://www.linkedin.com/in/amna-kashif-663a70343?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="btn-gold">
@@ -185,7 +174,7 @@
     </a>
 </section>
 
-<footer style="text-align: center; padding: 25px; color: #8892b0; border-top: 1px solid rgba(212, 175, 55, 0.1); position: relative; z-index: 10;">
+<footer style="text-align: center; padding: 40px 25px; color: #8892b0; border-top: 1px solid rgba(212, 175, 55, 0.1); position: relative; z-index: 10;">
     &copy; 2024 Amna Kashif | Professional Amazon VA
 </footer>
 

@@ -24,49 +24,46 @@
             line-height: 1.6;
         }
 
-        /* Star Animation Background */
+        /* Star Animation */
         .stars-container {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
         }
-
-        .star {
-            position: absolute; background: white; border-radius: 50%;
-            opacity: 0.5; animation: blink 3s infinite ease-in-out;
-        }
-
+        .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: blink 3s infinite ease-in-out; }
         @keyframes blink { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
 
         /* Navigation Bar */
         nav {
             position: fixed; top: 0; width: 100%;
             background: rgba(10, 25, 47, 0.98);
-            padding: 10px 8%; z-index: 1000;
+            padding: 15px 8%; z-index: 1000;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             backdrop-filter: blur(10px);
             display: flex; justify-content: space-between; align-items: center;
         }
 
         .logo-box { display: flex; align-items: center; text-decoration: none; }
-        
         .logo-ak {
-            font-size: 1.5rem; font-weight: 800; color: var(--navy-blue);
-            background: var(--gold); width: 45px; height: 45px;
+            font-size: 1.3rem; font-weight: 800; color: var(--navy-blue);
+            background: var(--gold); width: 40px; height: 40px;
             display: flex; justify-content: center; align-items: center;
-            border-radius: 50%; margin-right: 12px;
+            border-radius: 50%; margin-right: 10px;
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
+        .logo-text { color: var(--gold); font-weight: 600; font-size: 1rem; letter-spacing: 1px; }
 
-        .logo-text { color: var(--gold); font-weight: 600; font-size: 1.1rem; letter-spacing: 1px; }
-
+        /* Desktop Menu */
+        .nav-links { display: flex; align-items: center; }
         .nav-links a {
             color: var(--soft-white); text-decoration: none;
             margin-left: 25px; font-weight: 400; font-size: 0.9rem;
             text-transform: uppercase; transition: 0.3s;
         }
-
         .nav-links a:hover { color: var(--gold); }
+
+        /* Mobile Menu Icon */
+        .menu-icon { display: none; color: var(--gold); font-size: 1.5rem; cursor: pointer; }
 
         /* Hero Section */
         header {
@@ -74,83 +71,70 @@
             display: flex; align-items: center; justify-content: space-between;
             padding: 120px 10% 40px 10%;
         }
-
-        .hero-left { flex: 1.2; padding-right: 30px; }
+        .hero-left { flex: 1.2; }
         .hero-right { flex: 0.8; display: flex; justify-content: flex-end; }
 
-        .hero-left h1 { font-size: 4.5rem; color: var(--gold); line-height: 1; margin-bottom: 5px; }
-        .hero-left h2 { font-size: 1.8rem; color: var(--gray-text); margin-bottom: 20px; font-weight: 400; }
-        .hero-left p { max-width: 550px; font-size: 1.1rem; margin-bottom: 30px; color: var(--soft-white); }
+        .hero-left h1 { font-size: 4rem; color: var(--gold); line-height: 1.1; }
+        .hero-left h2 { font-size: 1.6rem; color: var(--gray-text); margin-bottom: 20px; font-weight: 400; }
+        .hero-left p { max-width: 500px; margin-bottom: 30px; }
 
-        /* Profile Photo Container */
-        .img-frame {
-            position: relative;
-            padding: 10px;
-            border: 2px solid var(--gold);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        /* Circular Profile Image */
+        .img-circle-container {
+            width: 280px; height: 280px;
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            padding: 8px;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
         }
-
         .profile-img {
-            width: 350px; height: 400px;
-            border-radius: 15px;
+            width: 100%; height: 100%;
+            border-radius: 50%;
             object-fit: cover;
             display: block;
         }
 
-        /* Sections Styling */
+        /* Sections */
         section { padding: 80px 10%; }
-        h2.section-title { font-size: 2.2rem; color: var(--gold); margin-bottom: 35px; border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 5px; }
+        h2.section-title { font-size: 2rem; color: var(--gold); margin-bottom: 30px; border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 5px; }
 
-        #about { margin-top: -40px; }
-
-        .skills-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+        /* Cards Grid */
+        .grid-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
         }
-
-        .skill-card {
-            background: var(--card-bg); padding: 30px;
-            border-radius: 15px; text-align: center; border: 1px solid rgba(212, 175, 55, 0.1);
-            transition: 0.4s;
+        .card {
+            background: var(--card-bg); padding: 30px; border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.1); transition: 0.4s;
+            text-align: center;
         }
-
-        .skill-card:hover { border-color: var(--gold); transform: translateY(-10px); background: rgba(212, 175, 55, 0.05); }
-        .skill-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
-
-        .project-card {
-            background: var(--card-bg); padding: 40px;
-            border-radius: 20px; border-left: 5px solid var(--gold);
-        }
-
-        /* Contact Button - Fixed for Laptop & Mobile */
-        .contact-area { text-align: center; margin-top: 20px; }
+        .card:hover { border-color: var(--gold); transform: translateY(-10px); background: rgba(212, 175, 55, 0.05); }
+        .card h3 { color: var(--gold); margin-bottom: 10px; }
+        .card p.sub { color: var(--gray-text); font-style: italic; font-size: 0.9rem; }
 
         .btn-gold {
             background: var(--gold); color: var(--navy-blue) !important;
-            padding: 15px 45px; border: 2px solid var(--gold);
-            border-radius: 50px; text-decoration: none; font-weight: 700;
-            display: inline-flex; align-items: center; gap: 10px;
-            transition: 0.3s; font-size: 1.1rem;
+            padding: 12px 35px; border-radius: 50px; text-decoration: none; font-weight: 700;
+            display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
         }
+        .btn-gold:hover { transform: translateY(-5px); background: #fff; }
 
-        .btn-gold:hover {
-            background: transparent; color: var(--gold) !important;
-            transform: translateY(-5px); box-shadow: 0 15px 25px rgba(212, 175, 55, 0.5);
-        }
-
-        /* Responsive Design */
+        /* Mobile Responsive */
         @media (max-width: 992px) {
-            nav { flex-direction: column; padding: 15px; }
-            .nav-links { margin-top: 15px; }
-            .nav-links a { margin: 0 10px; font-size: 0.8rem; }
-            header { flex-direction: column-reverse; text-align: center; padding-top: 180px; }
-            .hero-left { padding-right: 0; margin-top: 40px; }
-            .hero-right { justify-content: center; width: 100%; }
-            .hero-left h1 { font-size: 3rem; }
-            .profile-img { width: 280px; height: 320px; }
+            .menu-icon { display: block; }
+            .nav-links {
+                display: none; /* Hidden by default on mobile */
+                flex-direction: column; position: absolute; top: 70px; left: 0;
+                width: 100%; background: var(--navy-blue); padding: 20px 0;
+                border-bottom: 1px solid var(--gold);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { margin: 10px 0; font-size: 1.1rem; }
+
+            header { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
+            .hero-right { justify-content: center; margin-bottom: 40px; }
+            .hero-left h1 { font-size: 2.8rem; }
+            .img-circle-container { width: 220px; height: 220px; }
             section { padding: 60px 5%; }
-            #about { margin-top: 0; }
         }
     </style>
 </head>
@@ -161,13 +145,15 @@
     <nav>
         <a href="#" class="logo-box">
             <div class="logo-ak">AK</div>
-            <div class="logo-text">AMNA KASHIF</div>
+            <div class="logo-text">PORTFOLIO</div>
         </a>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+        <div class="menu-icon" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="#skills" onclick="toggleMenu()">Skills</a>
+            <a href="#courses" onclick="toggleMenu()">Courses</a>
+            <a href="#experience" onclick="toggleMenu()">Experience</a>
+            <a href="#contact" onclick="toggleMenu()">Contact</a>
         </div>
     </nav>
 
@@ -179,7 +165,7 @@
             <a href="#contact" class="btn-gold">Hire Me Now</a>
         </div>
         <div class="hero-right">
-            <div class="img-frame">
+            <div class="img-circle-container">
                 <img src="myimg.jpeg" alt="Amna Kashif" class="profile-img">
             </div>
         </div>
@@ -187,50 +173,70 @@
 
     <section id="about">
         <h2 class="section-title">About Me</h2>
-        <p style="max-width: 900px; font-size: 1.15rem; color: var(--soft-white);">
-            I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong> with a strong focus on helping businesses grow and succeed in the competitive e-commerce marketplace. I specialize in product research, keyword optimization, product listing creation, and account management.
-            <br><br>
-            With a deep understanding of Amazon’s algorithms and marketplace trends, I ensure that every task is completed with accuracy and efficiency. My goal is to provide high-quality support that increases sales and enhances overall store performance.
+        <p style="max-width: 850px;">
+            I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, and account management. My goal is to provide high-quality support that increases sales and enhances store performance.
         </p>
     </section>
 
     <section id="skills">
         <h2 class="section-title">Expertise</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fas fa-search-dollar"></i><h3>Product Research</h3></div>
-            <div class="skill-card"><i class="fas fa-keyboard"></i><h3>Keyword Research</h3></div>
-            <div class="skill-card"><i class="fas fa-pen-nib"></i><h3>Listing Optimization</h3></div>
-            <div class="skill-card"><i class="fas fa-ad"></i><h3>PPC Campaigns</h3></div>
-            <div class="skill-card"><i class="fas fa-chart-pie"></i><h3>Competitor Analysis</h3></div>
-            <div class="skill-card"><i class="fas fa-user-check"></i><h3>Account Management</h3></div>
+        <div class="grid-container">
+            <div class="card"><i class="fas fa-search-plus" style="font-size:2rem; color:var(--gold); margin-bottom:10px;"></i><h3>Product Research</h3></div>
+            <div class="card"><i class="fas fa-chart-line" style="font-size:2rem; color:var(--gold); margin-bottom:10px;"></i><h3>Amazon SEO</h3></div>
+            <div class="card"><i class="fas fa-ad" style="font-size:2rem; color:var(--gold); margin-bottom:10px;"></i><h3>PPC Management</h3></div>
+        </div>
+    </section>
+
+    <section id="courses">
+        <h2 class="section-title">Courses & Certifications</h2>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Amazon Digital Mastery</h3>
+                <p class="sub">from Enablers</p>
+            </div>
+            <div class="card">
+                <h3>Amazon Virtual Assistant</h3>
+                <p class="sub">from DigiSkills</p>
+            </div>
+            <div class="card">
+                <h3>Freelancing</h3>
+                <p class="sub">from DigiSkills</p>
+            </div>
         </div>
     </section>
 
     <section id="experience">
         <h2 class="section-title">Experience</h2>
-        <div class="project-card">
-            <h3 style="color: var(--gold);">USA Market: 5 Winning Projects</h3>
-            <p style="margin: 10px 0; font-weight: 600;">Product Hunting & Sourcing Specialist</p>
-            <p style="color: var(--gray-text);">Successfully delivered high-potential products for the USA market. My expertise includes in-depth hunting, reliable sourcing, and creating high-converting listings based on Amazon's latest SEO trends.</p>
+        <div class="card" style="text-align: left; border-left: 5px solid var(--gold);">
+            <h3>USA Market Expert</h3>
+            <p style="margin: 10px 0;">Completed 5 winning projects for the USA market. Specialized in hunting, sourcing, and optimized listings.</p>
         </div>
     </section>
 
-    <section id="contact" class="contact-area">
-        <h2 class="section-title">Let's Connect</h2>
-        <p style="margin-bottom: 30px; font-size: 1.2rem;">Ready to take your Amazon store to the next level?</p>
-        <a href="https://www.linkedin.com/in/YOUR_LINK_HERE" target="_blank" class="btn-gold">
-            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+    <section id="contact" style="text-align:center;">
+        <h2 class="section-title">Let's Talk</h2>
+        <p style="margin-bottom:20px;">Ready to grow your business?</p>
+        <a href="https://www.linkedin.com/in/YOUR_PROFILE" target="_blank" class="btn-gold">
+            <i class="fab fa-linkedin"></i> LinkedIn
         </a>
     </section>
 
-    <footer style="text-align: center; padding: 40px; color: var(--gray-text); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.05);">
-        &copy; 2024 Amna Kashif | Professional Amazon VA
+    <footer style="text-align: center; padding: 30px; font-size: 0.8rem; color: var(--gray-text);">
+        &copy; 2024 Amna Kashif | Professional VA Portfolio
     </footer>
 
     <script>
-        // Generating Star Background
+        // Hamburger Menu Logic
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            if(window.innerWidth <= 992) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        // Star background generator
         const starField = document.getElementById('starField');
-        for (let i = 0; i < 120; i++) {
+        for (let i = 0; i < 80; i++) {
             const star = document.createElement('div');
             star.className = 'star';
             star.style.left = Math.random() * 100 + '%';

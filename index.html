@@ -6,8 +6,8 @@
     <title>Amna Kashif | Amazon VA Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --navy: #0a192f; --gold: #D4AF37; --white: #f8f9fa; --slate: #8892b0; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; scroll-behavior: smooth; }
+        :root { --navy: #0a192f; --gold: #D4AF37; --white: #ffffff; --slate: #ccd6f6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--navy); color: var(--white); overflow-x: hidden; }
 
         /* Stars Background */
@@ -24,8 +24,7 @@
         }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--gold); font-weight: bold; }
         .logo-box { background: var(--gold); color: var(--navy); width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 1.3rem; }
-        .logo-name { font-size: 1.3rem; letter-spacing: 1px; }
-
+        
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 25px; }
         .nav-links a { text-decoration: none; color: white; font-size: 1rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
@@ -37,7 +36,7 @@
         header { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 130px 10% 50px; }
         .hero-text { flex: 1.2; padding-right: 30px; }
         .hero-text h1 { font-size: 4.5rem; color: var(--gold); line-height: 1.1; margin-bottom: 10px; }
-        .hero-text h2 { font-size: 2rem; color: var(--slate); margin-bottom: 20px; font-weight: 400; }
+        .hero-text h2 { font-size: 2rem; color: #8892b0; margin-bottom: 20px; }
         .hero-text p { max-width: 600px; margin-bottom: 35px; font-size: 1.4rem; color: var(--white); line-height: 1.6; }
 
         /* CIRCLE PHOTO FIX */
@@ -51,81 +50,57 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-            position: relative;
         }
         .circle-photo img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            border-radius: 50%;
-            display: block;
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
         }
 
         /* Section Titles */
         section { padding: 100px 10%; }
-        .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 40px; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 8px; text-transform: uppercase; }
+        .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 40px; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 8px; }
         
-        /* Larger Inner Text */
-        .inner-text { font-size: 1.4rem; line-height: 2; max-width: 1000px; color: var(--white); }
-        .inner-text strong { color: var(--gold); font-weight: 700; }
+        /* Inner Text Global White */
+        .inner-text { font-size: 1.45rem; line-height: 2; max-width: 1000px; color: #ffffff !important; }
+        .inner-text strong { color: var(--gold); }
 
-        /* Skills Grid */
-        .skills-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-            gap: 30px; 
-            margin-top: 40px;
-        }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        
+        /* Cards Styling */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .card { 
             background: rgba(255,255,255,0.05); 
             padding: 40px 30px; 
             border-radius: 20px; 
             border: 1px solid rgba(212,175,55,0.2); 
             text-align: center; 
-            transition: 0.4s ease; 
+            transition: 0.4s; 
         }
-        .card:hover { transform: translateY(-12px); border-color: var(--gold); background: rgba(212,175,55,0.1); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); background: rgba(212,175,55,0.1); }
         .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.5rem; }
-        .card p { font-size: 1.1rem; color: var(--slate); }
+        .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.6rem; }
+        
+        /* White Text inside Skills Cards */
+        .card p { font-size: 1.25rem; color: #ffffff !important; line-height: 1.5; }
 
-        /* Contact Button */
         .btn-gold {
             background: var(--gold); color: var(--navy) !important; padding: 18px 45px; border-radius: 50px;
             text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 12px;
             transition: 0.3s; margin-top: 30px; font-size: 1.2rem;
             box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
-            text-transform: uppercase;
         }
-        .btn-gold:hover { transform: scale(1.08); background: white; box-shadow: 0 15px 25px rgba(212, 175, 55, 0.6); }
+        .btn-gold:hover { transform: scale(1.08); background: white; }
 
-        /* Experience Box */
-        .exp-box { text-align: left; border-left: 6px solid var(--gold); padding-left: 30px; background: rgba(255,255,255,0.03); }
-
-        /* Mobile View */
+        /* Mobile Adjustments */
         @media (max-width: 992px) {
-            nav { height: 75px; padding: 0 5%; }
-            .logo-box { width: 40px; height: 40px; font-size: 1.1rem; }
-            .logo-name { font-size: 1.1rem; }
+            header { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
+            .hero-img { justify-content: center; margin-bottom: 50px; }
+            .circle-photo { width: 260px; height: 260px; }
+            .hero-text h1 { font-size: 3.5rem; }
             .menu-btn { display: block; }
             .nav-links {
-                display: none; position: absolute; top: 75px; left: 0; width: 100%;
+                display: none; position: absolute; top: 85px; left: 0; width: 100%;
                 background: var(--navy); flex-direction: column; padding: 40px 0;
-                border-bottom: 2px solid var(--gold);
             }
             .nav-links.active { display: flex; }
-            .nav-links li { margin: 20px 0; text-align: center; }
-            .nav-links a { font-size: 1.2rem; }
-            header { flex-direction: column-reverse; text-align: center; padding-top: 160px; }
-            .hero-img { justify-content: center; margin-bottom: 50px; }
-            .circle-photo { width: 250px; height: 250px; }
-            .hero-text h1 { font-size: 3.2rem; }
-            .hero-text p { font-size: 1.2rem; margin: 0 auto 30px; }
-            section { padding: 80px 5%; }
-            .title { font-size: 2rem; }
-            .inner-text { font-size: 1.2rem; }
+            .nav-links li { margin: 15px 0; text-align: center; }
         }
     </style>
 </head>
@@ -134,7 +109,7 @@
 <div class="stars" id="stars"></div>
 
 <nav>
-    <a href="#" class="logo"><div class="logo-box">AK</div> <span class="logo-name">AMNA KASHIF</span></a>
+    <a href="#" class="logo"><div class="logo-box">AK</div> AMNA KASHIF</a>
     <div class="menu-btn" id="menuToggle"><i class="fas fa-bars"></i></div>
     <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
@@ -154,7 +129,7 @@
     </div>
     <div class="hero-img">
         <div class="circle-photo">
-            <img src="image_68ebc3.jpg" alt="Amna Kashif Profile">
+            <img src="image_68ebc3.jpg" alt="Amna Kashif">
         </div>
     </div>
 </header>
@@ -162,64 +137,50 @@
 <section id="about">
     <h2 class="title">About Me</h2>
     <div class="inner-text">
-        I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance. I am committed to delivering results that help my clients stay ahead in the competitive e-commerce world.
+        I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.
     </div>
 </section>
 
 <section id="skills">
     <h2 class="title">My Core Skills</h2>
-    <div class="skills-grid">
-        <div class="card"><i class="fas fa-search-dollar"></i><h3>Product Research</h3><p>Finding profitable products with high demand.</p></div>
-        <div class="card"><i class="fas fa-key"></i><h3>Keyword Research</h3><p>Using Helium 10 & Jungle Scout for top keywords.</p></div>
-        <div class="card"><i class="fas fa-magic"></i><h3>Listing Optimization</h3><p>Creating SEO-friendly titles and bullet points.</p></div>
-        <div class="card"><i class="fas fa-rocket"></i><h3>Amazon SEO</h3><p>Improving organic ranking and visibility.</p></div>
-        <div class="card"><i class="fas fa-tasks"></i><h3>Account Management</h3><p>Handling Seller Central from A to Z.</p></div>
-        <div class="card"><i class="fas fa-ad"></i><h3>PPC Campaigns</h3><p>Setting up and optimizing Amazon Ads.</p></div>
-        <div class="card"><i class="fas fa-chart-pie"></i><h3>Competitor Analysis</h3><p>Analyzing competitor gaps to win sales.</p></div>
-        <div class="card"><i class="fas fa-layer-group"></i><h3>A+ Content</h3><p>Designing professional EBC/A+ descriptions.</p></div>
+    <div class="grid">
+        <div class="card"><i class="fas fa-search-dollar"></i><h3>Product Research</h3><p>Finding profitable products with high demand and low competition.</p></div>
+        <div class="card"><i class="fas fa-key"></i><h3>Keyword Research</h3><p>Advanced keyword extraction using Helium 10 & Jungle Scout.</p></div>
+        <div class="card"><i class="fas fa-rocket"></i><h3>Amazon SEO</h3><p>Optimizing rankings to bring your products to the first page.</p></div>
+        <div class="card"><i class="fas fa-tasks"></i><h3>Account Management</h3><p>Complete Seller Central handling from A to Z.</p></div>
     </div>
 </section>
 
 <section id="courses">
     <h2 class="title">Professional Training</h2>
     <div class="grid">
-        <div class="card">
-            <h3>Amazon Digital Mastery</h3>
-            <p style="font-size:1.2rem; color:var(--white); margin-top:10px;">Enablers</p>
-        </div>
-        <div class="card">
-            <h3>Amazon Virtual Assistant</h3>
-            <p style="font-size:1.2rem; color:var(--white); margin-top:10px;">DigiSkills</p>
-        </div>
-        <div class="card">
-            <h3>Freelancing</h3>
-            <p style="font-size:1.2rem; color:var(--white); margin-top:10px;">DigiSkills</p>
-        </div>
+        <div class="card"><h3>Amazon Digital Mastery</h3><p>Enablers</p></div>
+        <div class="card"><h3>Amazon Virtual Assistant</h3><p>DigiSkills</p></div>
+        <div class="card"><h3>Freelancing</h3><p>DigiSkills</p></div>
     </div>
 </section>
 
 <section id="experience">
     <h2 class="title">Professional Experience</h2>
-    <div class="card exp-box">
-        <h3>International Market Expertise</h3>
-        <div class="inner-text" style="margin-top:20px;">
-            <p><strong>• USA Market:</strong> Successfully hunted 5 winning products with high profit margins and low competition. Provided end-to-end sourcing and listing support.</p>
-            <p style="margin-top:15px;"><strong>• UAE Market:</strong> Specialized in the Middle Eastern marketplace by hunting profitable products tailored to UAE trends. Prepared comprehensive <strong>Sourcing Sheets</strong> for clients, ensuring cost-effective procurement and reliable supplier leads.</p>
+    <div class="card" style="text-align: left; border-left: 6px solid var(--gold); padding: 40px;">
+        <div class="inner-text">
+            <p><strong>• USA Market:</strong> Successfully hunted 5 winning products with high profit margins. Managed sourcing and listing optimization for diverse categories.</p>
+            <br>
+            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends. Conducted winning product hunting and prepared detailed <strong>Sourcing Sheets</strong> for clients to ensure smooth procurement.</p>
         </div>
     </div>
 </section>
 
 <section id="contact" style="text-align: center;">
     <h2 class="title">Contact Me</h2>
-    <p class="inner-text" style="margin: 0 auto 30px;">Ready to scale your Amazon business to the next level? Let's talk!</p>
-    
+    <p class="inner-text" style="margin: 0 auto 30px;">Ready to grow your Amazon business? Let's connect!</p>
     <a href="https://www.linkedin.com/in/amna-kashif-va" target="_blank" class="btn-gold">
-        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        <i class="fab fa-linkedin"></i> LinkedIn Profile
     </a>
 </section>
 
-<footer style="text-align: center; padding: 50px; color: var(--slate); font-size: 1.1rem; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-    &copy; 2024 Amna Kashif | Professional Amazon VA Portfolio
+<footer style="text-align: center; padding: 50px; color: #8892b0; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+    &copy; 2024 Amna Kashif | Professional Amazon VA
 </footer>
 
 <script>
@@ -238,10 +199,6 @@
     const btn = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
     btn.onclick = () => links.classList.toggle('active');
-    
-    document.querySelectorAll('.nav-links a').forEach(a => {
-        a.onclick = () => links.classList.remove('active');
-    });
 </script>
 
 </body>

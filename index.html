@@ -17,71 +17,71 @@
 
         /* Navigation */
         nav {
-            position: fixed; top: 0; width: 100%; height: 85px;
+            position: fixed; top: 0; width: 100%; height: 75px;
             background: rgba(10, 25, 47, 0.98); display: flex;
             justify-content: space-between; align-items: center;
             padding: 0 8%; z-index: 1000; border-bottom: 2px solid var(--gold);
         }
         .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--gold); font-weight: bold; }
-        .logo-box { background: var(--gold); color: var(--navy); width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 1.3rem; }
+        .logo-box { background: var(--gold); color: var(--navy); width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: 800; font-size: 1.2rem; }
         
         .nav-links { display: flex; list-style: none; }
         .nav-links li { margin-left: 25px; }
-        .nav-links a { text-decoration: none; color: white; font-size: 1rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: white; font-size: 0.95rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
         .nav-links a:hover { color: var(--gold); }
-        .menu-btn { display: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
+        .menu-btn { display: none; color: var(--gold); font-size: 1.8rem; cursor: pointer; }
 
-        /* Hero Section */
-        header { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 130px 10% 50px; }
+        /* Hero Section - Reduced Padding */
+        header { min-height: 80vh; display: flex; align-items: center; justify-content: space-between; padding: 100px 10% 30px; }
         .hero-text { flex: 1.2; padding-right: 30px; }
-        .hero-text h1 { font-size: 4.5rem; color: var(--gold); line-height: 1.1; margin-bottom: 10px; }
-        .hero-text h2 { font-size: 2rem; color: #8892b0; margin-bottom: 20px; }
-        .hero-text p { max-width: 600px; margin-bottom: 35px; font-size: 1.4rem; color: var(--white); line-height: 1.6; }
+        .hero-text h1 { font-size: 4rem; color: var(--gold); line-height: 1.1; margin-bottom: 10px; }
+        .hero-text h2 { font-size: 1.8rem; color: #8892b0; margin-bottom: 15px; }
+        .hero-text p { max-width: 600px; margin-bottom: 25px; font-size: 1.3rem; color: var(--white); line-height: 1.5; }
 
         /* Circle Photo */
         .hero-img { flex: 0.8; display: flex; justify-content: flex-end; }
         .circle-photo {
-            width: 320px; height: 320px; border-radius: 50% !important; border: 5px solid var(--gold);
+            width: 300px; height: 300px; border-radius: 50% !important; border: 5px solid var(--gold);
             overflow: hidden; display: flex; justify-content: center; align-items: center;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
         }
         .circle-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 
-        /* Titles */
-        section { padding: 80px 10%; }
-        .title { color: var(--gold); font-size: 2.5rem; margin-bottom: 40px; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 8px; text-transform: uppercase; }
+        /* REDUCED SECTION SPACING (Fasla Kam Kar Diya) */
+        section { padding: 50px 10%; } 
+        .title { color: var(--gold); font-size: 2.2rem; margin-bottom: 25px; border-bottom: 3px solid var(--gold); display: inline-block; padding-bottom: 5px; text-transform: uppercase; }
         
-        /* Inner Text Global White */
-        .inner-text { font-size: 1.45rem; line-height: 1.8; max-width: 1000px; color: #ffffff !important; }
+        /* Inner Text */
+        .inner-text { font-size: 1.3rem; line-height: 1.7; max-width: 1000px; color: #ffffff !important; }
         .inner-text strong { color: var(--gold); }
 
-        /* Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* Grid Spacing */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { 
-            background: rgba(255,255,255,0.05); padding: 40px 30px; border-radius: 20px; 
+            background: rgba(255,255,255,0.05); padding: 30px 25px; border-radius: 15px; 
             border: 1px solid rgba(212,175,55,0.2); text-align: center; transition: 0.4s; 
         }
-        .card:hover { transform: translateY(-10px); border-color: var(--gold); background: rgba(212,175,55,0.1); }
-        .card i { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
-        .card h3 { color: var(--gold); margin-bottom: 15px; font-size: 1.6rem; }
-        .card p { font-size: 1.2rem; color: #ffffff !important; line-height: 1.5; }
+        .card:hover { transform: translateY(-8px); border-color: var(--gold); background: rgba(212,175,55,0.1); }
+        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+        .card h3 { color: var(--gold); margin-bottom: 10px; font-size: 1.4rem; }
+        .card p { font-size: 1.1rem; color: #ffffff !important; line-height: 1.4; }
 
         .btn-gold {
-            background: var(--gold); color: var(--navy) !important; padding: 18px 45px; border-radius: 50px;
-            text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 12px;
-            transition: 0.3s; margin-top: 30px; font-size: 1.2rem; box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+            background: var(--gold); color: var(--navy) !important; padding: 15px 40px; border-radius: 50px;
+            text-decoration: none; font-weight: 800; display: inline-flex; align-items: center; gap: 10px;
+            transition: 0.3s; margin-top: 20px; font-size: 1.1rem; box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
         }
-        .btn-gold:hover { transform: scale(1.08); background: white; }
+        .btn-gold:hover { transform: scale(1.05); background: white; }
 
         @media (max-width: 992px) {
-            header { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
-            .hero-img { justify-content: center; margin-bottom: 50px; }
-            .circle-photo { width: 260px; height: 260px; }
-            .hero-text h1 { font-size: 3.5rem; }
-            .menu-btn { display: block; }
-            .nav-links { display: none; position: absolute; top: 85px; left: 0; width: 100%; background: var(--navy); flex-direction: column; padding: 40px 0; }
+            header { flex-direction: column-reverse; text-align: center; padding-top: 130px; }
+            .hero-img { justify-content: center; margin-bottom: 30px; }
+            .circle-photo { width: 240px; height: 240px; }
+            .hero-text h1 { font-size: 3rem; }
+            section { padding: 40px 5%; }
+            .nav-links { display: none; position: absolute; top: 75px; left: 0; width: 100%; background: var(--navy); flex-direction: column; padding: 30px 0; }
             .nav-links.active { display: flex; }
-            .nav-links li { margin: 15px 0; text-align: center; }
+            .nav-links li { margin: 12px 0; text-align: center; }
         }
     </style>
 </head>
@@ -120,7 +120,7 @@
     <div class="inner-text">
         <p>I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management. My goal is to provide high-quality support that increases sales, improves visibility, and enhances overall store performance.</p>
         <br>
-        <p>In addition to my technical skills, I am deeply committed to helping brands establish a strong identity on Amazon. I focus on data-driven decision-making, ensuring that every move—from choosing a supplier to launching a PPC campaign—is backed by solid market research. I pride myself on being a proactive problem solver who stays updated with the ever-changing Amazon policies to keep your business safe and profitable.</p>
+        <p>I focus on data-driven decision-making, ensuring that every move—from choosing a supplier to launching a PPC campaign—is backed by solid market research. I pride myself on being a proactive problem solver who stays updated with the ever-changing Amazon policies.</p>
     </div>
 </section>
 
@@ -150,24 +150,24 @@
 
 <section id="experience">
     <h2 class="title">Professional Experience</h2>
-    <div class="card" style="text-align: left; border-left: 6px solid var(--gold); padding: 40px;">
+    <div class="card" style="text-align: left; border-left: 6px solid var(--gold); padding: 30px;">
         <div class="inner-text">
             <p><strong>• USA Market:</strong> Successfully hunted 5 winning products with high profit margins. Expert in managing USA market competition and sourcing leads.</p>
             <br>
-            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends. Conducted winning product hunting and prepared detailed <strong>Sourcing Sheets</strong> for clients to ensure cost-effective procurement.</p>
+            <p><strong>• UAE Market:</strong> Specialized in Gulf marketplace trends. Conducted winning product hunting and prepared detailed <strong>Sourcing Sheets</strong> for clients.</p>
         </div>
     </div>
 </section>
 
 <section id="contact" style="text-align: center;">
     <h2 class="title">Contact Me</h2>
-    <p class="inner-text" style="margin: 0 auto 30px;">Ready to take your store to the next level? Let's connect and start today!</p>
+    <p class="inner-text" style="margin: 0 auto 20px;">Ready to take your store to the next level? Let's connect!</p>
     <a href="https://www.linkedin.com/in/amna-kashif-va" target="_blank" class="btn-gold">
         <i class="fab fa-linkedin"></i> LinkedIn Profile
     </a>
 </section>
 
-<footer style="text-align: center; padding: 50px; color: #8892b0; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+<footer style="text-align: center; padding: 30px; color: #8892b0; border-top: 1px solid rgba(212, 175, 55, 0.1);">
     &copy; 2024 Amna Kashif | Professional Amazon VA
 </footer>
 

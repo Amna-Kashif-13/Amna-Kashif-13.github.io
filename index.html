@@ -38,14 +38,20 @@
         .hero-text h2 { font-size: 1.8rem; color: #8892b0; margin-bottom: 15px; }
         .hero-text p { max-width: 600px; margin-bottom: 25px; font-size: 1.3rem; color: var(--white); line-height: 1.5; }
 
-        /* Circle Photo */
+        /* Circle Photo FIXED */
         .hero-img { flex: 0.8; display: flex; justify-content: flex-end; }
         .circle-photo {
-            width: 300px; height: 300px; border-radius: 50% !important; border: 5px solid var(--gold);
+            width: 320px; height: 320px; border-radius: 50%; border: 5px solid var(--gold);
             overflow: hidden; display: flex; justify-content: center; align-items: center;
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            background: white; /* Takay agar pic choti ho to background white rahay */
         }
-        .circle-photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+        .circle-photo img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; /* Is se pic circle mein fit ho jayegi */
+            display: block;
+        }
 
         /* Section Spacing */
         section { padding: 40px 10%; } 
@@ -80,22 +86,15 @@
                 padding-top: 120px; 
                 min-height: auto;
             }
-            .hero-text { 
-                text-align: center; 
-                padding-right: 0; 
-            }
+            .hero-text { text-align: center; padding-right: 0; }
             .hero-text h1 { font-size: 2.8rem; }
             .hero-text h2 { font-size: 1.5rem; }
             .hero-text p { margin: 0 auto 20px; font-size: 1.1rem; }
-            
             .hero-img { justify-content: center; margin-bottom: 30px; }
-            .circle-photo { width: 220px; height: 220px; }
-            
+            .circle-photo { width: 260px; height: 260px; }
             section { padding: 35px 6%; text-align: center; } 
             .inner-text { font-size: 1.1rem; margin: 0 auto; }
             .title { font-size: 1.8rem; }
-
-            /* Nav Menu */
             .menu-btn { display: block; }
             .nav-links { 
                 display: none; position: absolute; top: 70px; left: 0; width: 100%; 
@@ -131,7 +130,7 @@
     </div>
     <div class="hero-img">
         <div class="circle-photo">
-            <img src="myimg.jpeg" alt="Amazon Services Infographic">
+            <img src="image_68ebc3.jpg" alt="Amazon Services Infographic">
         </div>
     </div>
 </header>
@@ -139,9 +138,9 @@
 <section id="about">
     <h2 class="title">About Me</h2>
     <div class="inner-text">
-        <p>I am a dedicated and detail-oriented <strong>Amazon Virtual Assistant</strong>. I specialize in product research, keyword optimization, product listing creation, and account management.</p>
+        <p>I am a dedicated and results-driven <strong>Amazon Virtual Assistant</strong>. My expertise lies in helping brands navigate the complexities of Amazon by providing data-backed strategies that drive organic traffic and increase conversion rates. I specialize in deep <strong>Product Research</strong>, high-intent <strong>Keyword Optimization</strong>, and full <strong>Account Management</strong>.</p>
         <br>
-        <p>I focus on data-driven decision-making, ensuring that every move is backed by solid market research. I pride myself on being a proactive problem solver.</p>
+        <p>Beyond the technical side, I am passionate about building sustainable growth for my clients. I focus on staying ahead of Amazon's algorithm changes to ensure your store remains competitive and profitable. Whether it's launching a new product or optimizing an existing listing, I am committed to delivering excellence and a high ROAS for every project.</p>
     </div>
 </section>
 

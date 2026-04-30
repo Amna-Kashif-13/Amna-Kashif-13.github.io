@@ -90,10 +90,53 @@
             .nav-links.active { display: flex; }
             .nav-links li { margin: 10px 0; margin-left: 0; }
         }
+        /* Custom Cursor Styling */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--gold);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--gold);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9998;
+    pointer-events: none;
+    transition: width 0.3s, height 0.3s, border-color 0.3s;
+}
+
+/* Jab mouse link par jaye to cursor bara ho jaye */
+.cursor-hover {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(212, 175, 55, 0.1);
+    border-color: white;
+}
+
+/* Laptop/Desktop ke liye asli cursor hide karna */
+@media (min-width: 992px) {
+    html, body { cursor: none; }
+    a, button, .card, .btn-gold { cursor: none; }
+}
     </style>
 </head>
 <body>
-
+<div class="cursor-dot"></div>
+<div class="cursor-outline"></div>
+    
 <div class="stars" id="stars"></div>
 
 <nav>
@@ -195,6 +238,30 @@
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.onclick = () => links.classList.remove('active');
     });
+    const dot = document.querySelector(".cursor-dot");
+const outline = document.querySelector(".cursor-outline");
+
+window.addEventListener("mousemove", (e) => {
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    // Dot foran move hoga
+    dot.style.left = `${posX}px`;
+    dot.style.top = `${posY}px`;
+
+    // Outline thora smootly follow karega
+    outline.animate({
+        left: `${posX}px`,
+        top: `${posY}px`
+    }, { duration: 500, fill: "forwards" });
+});
+
+// Buttons aur Links par hover effect
+const interactiveElements = document.querySelectorAll("a, button, .card, .btn-gold");
+interactiveElements.forEach(el => {
+    el.addEventListener("mouseenter", () => outline.classList.add("cursor-hover"));
+    el.addEventListener("mouseleave", () => outline.classList.remove("cursor-hover"));
+});
 </script>
 
 </body>

@@ -90,8 +90,10 @@
             .nav-links.active { display: flex; }
             .nav-links li { margin: 10px 0; margin-left: 0; }
         }
-       
-    
+    </style>
+</head>
+<body>
+
 <div class="stars" id="stars"></div>
 
 <nav>
@@ -193,7 +195,6 @@
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.onclick = () => links.classList.remove('active');
     });
-
 </script>
 
 </body>

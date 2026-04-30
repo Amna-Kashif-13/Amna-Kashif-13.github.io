@@ -15,6 +15,37 @@
         .star { position: absolute; background: white; border-radius: 50%; opacity: 0.5; animation: blink 3s infinite; }
         @keyframes blink { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
 
+        /* Luxury Shine Cursor Styling */
+        .luxury-cursor {
+            width: 22px;
+            height: 22px;
+            background-color: var(--gold);
+            border: 3px solid #ffffff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.8), 0 0 5px #ffffff;
+            transition: transform 0.15s ease-out;
+        }
+
+        .cursor-shine-active {
+            transform: translate(-50%, -50%) scale(1.4);
+            background-color: #ffffff;
+            border-color: var(--gold);
+            box-shadow: 0 0 25px var(--gold);
+        }
+
+        /* Desktop par asli mouse hide karne ke liye */
+        @media (min-width: 992px) {
+            html, body, a, button, .card, .btn-gold { 
+                cursor: none !important; 
+            }
+        }
+
         /* General Section Fix for Laptop Visibility */
         section { position: relative; z-index: 10; padding: 60px 10%; }
 
@@ -89,11 +120,13 @@
             }
             .nav-links.active { display: flex; }
             .nav-links li { margin: 10px 0; margin-left: 0; }
+            .luxury-cursor { display: none; } /* Mobile par custom cursor hide */
         }
     </style>
 </head>
 <body>
 
+<div class="luxury-cursor"></div>
 <div class="stars" id="stars"></div>
 
 <nav>
@@ -179,6 +212,7 @@
 </footer>
 
 <script>
+    // Stars Background
     const s = document.getElementById('stars');
     for(let i=0; i<80; i++){
         let d = document.createElement('div');
@@ -188,12 +222,27 @@
         d.style.width='2px'; d.style.height='2px';
         s.appendChild(d);
     }
+
+    // Navigation Menu
     const btn = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
     btn.onclick = () => links.classList.toggle('active');
     
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.onclick = () => links.classList.remove('active');
+    });
+
+    // Custom Luxury Cursor Logic
+    const myCursor = document.querySelector(".luxury-cursor");
+    window.addEventListener("mousemove", (e) => {
+        myCursor.style.left = `${e.clientX}px`;
+        myCursor.style.top = `${e.clientY}px`;
+    });
+
+    const allLinks = document.querySelectorAll("a, button, .card, .btn-gold, .logo");
+    allLinks.forEach(item => {
+        item.addEventListener("mouseenter", () => myCursor.classList.add("cursor-shine-active"));
+        item.addEventListener("mouseleave", () => myCursor.classList.remove("cursor-shine-active"));
     });
 </script>
 
